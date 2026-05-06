@@ -5,3 +5,9 @@
 # Draft content
 drafts/
 *.draft.mdx
+
+# Scaffolding generators (not user-facing docs)
+scripts/
+
+# Authoring reference snippets (leading underscore = internal only)
+snippets/_*.mdx

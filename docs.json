@@ -1,22 +1,50 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "sequoia",
+  "theme": "almond",
   "name": "Legend Standards",
   "description": "Plain-English explanations, classroom examples, and citations for U.S. K-12 learning standards.",
   "colors": {
-    "primary": "#166E3F",
-    "light": "#26BD6C",
-    "dark": "#166E3F"
+    "primary": "#12936B",
+    "light": "#2AAF82",
+    "dark": "#0E7553"
   },
   "favicon": "/favicon.ico",
   "icons": {
     "library": "lucide"
   },
+  "fonts": {
+    "heading": {
+      "family": "Fraunces",
+      "weight": 500,
+      "format": "woff2"
+    },
+    "body": {
+      "family": "Inter",
+      "weight": 400,
+      "format": "woff2"
+    }
+  },
+  "appearance": {
+    "default": "light",
+    "strict": false
+  },
+  "seo": {
+    "indexing": "all",
+    "metatags": {
+      "og:site_name": "Legend Standards",
+      "og:locale": "en_US",
+      "og:type": "website",
+      "og:image": "/og/default.png",
+      "twitter:card": "summary_large_image",
+      "twitter:site": "@legendeducation",
+      "robots": "index,follow,max-snippet:-1,max-image-preview:large,max-video-preview:-1"
+    }
+  },
   "metadata": {
     "timestamp": true
   },
   "contextual": {
-    "options": ["copy", "view", "assistant", "mcp", "add-mcp"]
+    "options": ["copy", "view", "chatgpt", "claude", "perplexity", "mcp", "cursor", "vscode"]
   },
   "navigation": {
     "tabs": [
@@ -31,8 +59,198 @@
             "group": "Common Core",
             "pages": [
               "standards/common-core/index",
-              "standards/common-core/ela",
-              "standards/common-core/math"
+              {
+                "group": "ELA",
+                "pages": [
+                  "standards/common-core/ela/index",
+                  {
+                    "group": "Anchor standards",
+                    "pages": [
+                      "standards/common-core/ela/anchor/index",
+                      "standards/common-core/ela/anchor/reading",
+                      "standards/common-core/ela/anchor/writing",
+                      "standards/common-core/ela/anchor/speaking-listening",
+                      "standards/common-core/ela/anchor/language"
+                    ]
+                  },
+                  {
+                    "group": "Grades K-5",
+                    "pages": [
+                      "standards/common-core/ela/kindergarten/index",
+                      "standards/common-core/ela/grade-1/index",
+                      "standards/common-core/ela/grade-2/index",
+                      "standards/common-core/ela/grade-3/index",
+                      "standards/common-core/ela/grade-4/index",
+                      "standards/common-core/ela/grade-5/index"
+                    ]
+                  },
+                  {
+                    "group": "Grades 6-8",
+                    "pages": [
+                      "standards/common-core/ela/grade-6/index",
+                      "standards/common-core/ela/grade-7/index",
+                      "standards/common-core/ela/grade-8/index"
+                    ]
+                  },
+                  {
+                    "group": "Grades 9-12 bands",
+                    "pages": [
+                      "standards/common-core/ela/grades-9-10/index",
+                      "standards/common-core/ela/grades-11-12/index"
+                    ]
+                  },
+                  {
+                    "group": "Literacy in content areas",
+                    "pages": [
+                      "standards/common-core/ela/literacy-history-social-studies/grades-6-8",
+                      "standards/common-core/ela/literacy-history-social-studies/grades-9-10",
+                      "standards/common-core/ela/literacy-history-social-studies/grades-11-12",
+                      "standards/common-core/ela/literacy-science-technical/grades-6-8",
+                      "standards/common-core/ela/literacy-science-technical/grades-9-10",
+                      "standards/common-core/ela/literacy-science-technical/grades-11-12"
+                    ]
+                  }
+                ]
+              },
+              {
+                "group": "Math",
+                "pages": [
+                  "standards/common-core/math/index",
+                  {
+                    "group": "Practice standards",
+                    "pages": [
+                      "standards/common-core/math/practice/index",
+                      "standards/common-core/math/practice/mp1",
+                      "standards/common-core/math/practice/mp2",
+                      "standards/common-core/math/practice/mp3",
+                      "standards/common-core/math/practice/mp4",
+                      "standards/common-core/math/practice/mp5",
+                      "standards/common-core/math/practice/mp6",
+                      "standards/common-core/math/practice/mp7",
+                      "standards/common-core/math/practice/mp8"
+                    ]
+                  },
+                  {
+                    "group": "Grades K-5",
+                    "pages": [
+                      {
+                        "group": "Kindergarten",
+                        "pages": [
+                          "standards/common-core/math/kindergarten/index",
+                          "standards/common-core/math/kindergarten/counting-cardinality",
+                          "standards/common-core/math/kindergarten/operations-algebraic-thinking",
+                          "standards/common-core/math/kindergarten/number-base-ten",
+                          "standards/common-core/math/kindergarten/measurement-data",
+                          "standards/common-core/math/kindergarten/geometry"
+                        ]
+                      },
+                      {
+                        "group": "Grade 1",
+                        "pages": [
+                          "standards/common-core/math/grade-1/index",
+                          "standards/common-core/math/grade-1/operations-algebraic-thinking",
+                          "standards/common-core/math/grade-1/number-base-ten",
+                          "standards/common-core/math/grade-1/measurement-data",
+                          "standards/common-core/math/grade-1/geometry"
+                        ]
+                      },
+                      {
+                        "group": "Grade 2",
+                        "pages": [
+                          "standards/common-core/math/grade-2/index",
+                          "standards/common-core/math/grade-2/operations-algebraic-thinking",
+                          "standards/common-core/math/grade-2/number-base-ten",
+                          "standards/common-core/math/grade-2/measurement-data",
+                          "standards/common-core/math/grade-2/geometry"
+                        ]
+                      },
+                      {
+                        "group": "Grade 3",
+                        "pages": [
+                          "standards/common-core/math/grade-3/index",
+                          "standards/common-core/math/grade-3/operations-algebraic-thinking",
+                          "standards/common-core/math/grade-3/number-base-ten",
+                          "standards/common-core/math/grade-3/number-fractions",
+                          "standards/common-core/math/grade-3/measurement-data",
+                          "standards/common-core/math/grade-3/geometry"
+                        ]
+                      },
+                      {
+                        "group": "Grade 4",
+                        "pages": [
+                          "standards/common-core/math/grade-4/index",
+                          "standards/common-core/math/grade-4/operations-algebraic-thinking",
+                          "standards/common-core/math/grade-4/number-base-ten",
+                          "standards/common-core/math/grade-4/number-fractions",
+                          "standards/common-core/math/grade-4/measurement-data",
+                          "standards/common-core/math/grade-4/geometry"
+                        ]
+                      },
+                      {
+                        "group": "Grade 5",
+                        "pages": [
+                          "standards/common-core/math/grade-5/index",
+                          "standards/common-core/math/grade-5/operations-algebraic-thinking",
+                          "standards/common-core/math/grade-5/number-base-ten",
+                          "standards/common-core/math/grade-5/number-fractions",
+                          "standards/common-core/math/grade-5/measurement-data",
+                          "standards/common-core/math/grade-5/geometry"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "Grades 6-8",
+                    "pages": [
+                      {
+                        "group": "Grade 6",
+                        "pages": [
+                          "standards/common-core/math/grade-6/index",
+                          "standards/common-core/math/grade-6/ratios-proportional-relationships",
+                          "standards/common-core/math/grade-6/number-system",
+                          "standards/common-core/math/grade-6/expressions-equations",
+                          "standards/common-core/math/grade-6/geometry",
+                          "standards/common-core/math/grade-6/statistics-probability"
+                        ]
+                      },
+                      {
+                        "group": "Grade 7",
+                        "pages": [
+                          "standards/common-core/math/grade-7/index",
+                          "standards/common-core/math/grade-7/ratios-proportional-relationships",
+                          "standards/common-core/math/grade-7/number-system",
+                          "standards/common-core/math/grade-7/expressions-equations",
+                          "standards/common-core/math/grade-7/geometry",
+                          "standards/common-core/math/grade-7/statistics-probability"
+                        ]
+                      },
+                      {
+                        "group": "Grade 8",
+                        "pages": [
+                          "standards/common-core/math/grade-8/index",
+                          "standards/common-core/math/grade-8/number-system",
+                          "standards/common-core/math/grade-8/expressions-equations",
+                          "standards/common-core/math/grade-8/functions",
+                          "standards/common-core/math/grade-8/geometry",
+                          "standards/common-core/math/grade-8/statistics-probability"
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "group": "High school",
+                    "pages": [
+                      "standards/common-core/math/high-school/index",
+                      "standards/common-core/math/high-school/number-quantity",
+                      "standards/common-core/math/high-school/algebra",
+                      "standards/common-core/math/high-school/functions",
+                      "standards/common-core/math/high-school/modeling",
+                      "standards/common-core/math/high-school/geometry",
+                      "standards/common-core/math/high-school/statistics-probability"
+                    ]
+                  }
+                ]
+              }
             ]
           },
           {

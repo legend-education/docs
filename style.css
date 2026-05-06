@@ -1,8 +1,95 @@
-/* table of contents: chevron next to the active (deepest) section */
+/* ============================================================
+   Legend Standards — editorial reference styling
+   Stripe-docs-meets-textbook on top of Mintlify's sequoia theme.
+   Brand DNA pulled from mono/apps/v2-product/styles/_colors.css.
+   ============================================================ */
+
+:root {
+  --legend-cream-50: #fdf6f0;
+  --legend-cream-100: #f4ede8;
+  --legend-cream-200: #efeeed;
+  --legend-cream-300: #ddd6d1;
+  --legend-warm-700: #423f3c;
+  --legend-warm-800: #211f1d;
+  --legend-warm-900: #1e1c1a;
+  --legend-warm-950: #151311;
+
+  --legend-primary: #12936b;
+  --legend-primary-soft: rgba(18, 147, 107, 0.08);
+  --legend-primary-strong: #0e7553;
+  --legend-primary-light: #2aaf82;
+
+  --legend-forest: #7f9e4d;
+  --legend-rule: rgba(33, 31, 29, 0.12);
+  --legend-rule-strong: rgba(33, 31, 29, 0.24);
+
+  --legend-prose-width: 44rem;
+  --legend-radius-sm: 0.5rem;
+  --legend-radius-md: 0.75rem;
+  --legend-radius-lg: 1rem;
+  --legend-shadow-card: 0 1px 2px rgba(33, 31, 29, 0.06),
+    0 8px 24px rgba(33, 31, 29, 0.06);
+
+  --legend-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
+    "Liberation Mono", monospace;
+}
+
+.dark {
+  --legend-cream-50: #1e1c1a;
+  --legend-cream-100: #211f1d;
+  --legend-cream-200: #282624;
+  --legend-cream-300: #423f3c;
+  --legend-rule: rgba(244, 237, 232, 0.12);
+  --legend-rule-strong: rgba(244, 237, 232, 0.24);
+  --legend-primary-soft: rgba(42, 175, 130, 0.12);
+}
+
+/* ------------------------------------------------------------
+   Baseline editorial polish
+   ------------------------------------------------------------ */
+
+main h1,
+main h2,
+main h3,
+main h4 {
+  font-feature-settings: "ss01", "ss02";
+  letter-spacing: -0.01em;
+}
+
+main h1 {
+  font-size: clamp(2rem, 1.5rem + 1.6vw, 2.75rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  font-weight: 500;
+}
+
+main h2 {
+  font-size: 1.625rem;
+  line-height: 1.2;
+  margin-top: 2.5rem;
+}
+
+main p,
+main li {
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+main p code,
+main li code {
+  font-family: var(--legend-mono);
+  font-size: 0.9em;
+}
+
+/* ------------------------------------------------------------
+   Table of contents — chevron next to deepest active section
+   ------------------------------------------------------------ */
+
 toc-item > a {
   position: relative;
   padding-left: 1rem !important;
 }
+
 toc-item[data-active-deepest] > a::before {
   content: "";
   position: absolute;
@@ -12,12 +99,17 @@ toc-item[data-active-deepest] > a::before {
   height: 0.75rem;
   transform: translateY(-50%);
   background-color: currentColor;
-  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='9 18 15 12 9 6'/></svg>") no-repeat center / contain;
-          mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='9 18 15 12 9 6'/></svg>") no-repeat center / contain;
+  -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='9 18 15 12 9 6'/></svg>")
+    no-repeat center / contain;
+  mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'><polyline points='9 18 15 12 9 6'/></svg>")
+    no-repeat center / contain;
   pointer-events: none;
 }
 
-/* topbar logo: render smaller than its natural width */
+/* ------------------------------------------------------------
+   Topbar logo — render smaller than its natural width
+   ------------------------------------------------------------ */
+
 #navbar a[href="/"] img,
 #navbar a[href="/"] svg,
 #sidebar a[href="/"] img,
@@ -31,6 +123,10 @@ a[nav-tabs-item] {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ------------------------------------------------------------
+   Existing texture card (kept from previous style.css)
+   ------------------------------------------------------------ */
+
 .kb-feature-card {
   background-color: rgb(var(--foreground-light, 17 24 39));
 }
@@ -39,8 +135,270 @@ a[nav-tabs-item] {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: url('/images/texture.png');
+  background-image: url("/images/texture.png");
   background-position: center;
   background-size: cover;
   opacity: 0.875;
+}
+
+/* ============================================================
+   PRIMITIVE 1 — Answer box
+   The 50-80 word direct answer that sits at the top of every
+   standards page. Designed to be quotable by an LLM.
+   ============================================================ */
+
+.answer-box {
+  position: relative;
+  margin: 1.5rem 0 2rem;
+  padding: 1.25rem 1.5rem 1.25rem 1.75rem;
+  background: var(--legend-cream-100);
+  border: 1px solid var(--legend-rule);
+  border-left: 3px solid var(--legend-primary);
+  border-radius: var(--legend-radius-md);
+}
+
+.answer-box::before {
+  content: "Direct answer";
+  display: block;
+  font-family: var(--legend-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--legend-primary-strong);
+  margin-bottom: 0.5rem;
+}
+
+.dark .answer-box::before {
+  color: var(--legend-primary-light);
+}
+
+.answer-box p {
+  margin: 0;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+.answer-box p + p {
+  margin-top: 0.75rem;
+}
+
+/* ============================================================
+   PRIMITIVE 2 — Citation block
+   Official source footer: publisher, URL, version, last-updated.
+   ============================================================ */
+
+.citation {
+  margin: 2.5rem 0 1.5rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--legend-cream-50);
+  border: 1px solid var(--legend-rule);
+  border-radius: var(--legend-radius-md);
+  font-size: 0.9375rem;
+}
+
+.citation::before {
+  content: "Official source";
+  display: block;
+  font-family: var(--legend-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--legend-warm-700);
+  margin-bottom: 0.75rem;
+}
+
+.dark .citation::before {
+  color: var(--legend-cream-300);
+}
+
+.citation dl {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.375rem 1rem;
+  margin: 0;
+}
+
+.citation dt {
+  font-family: var(--legend-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--legend-warm-700);
+  font-weight: 500;
+}
+
+.dark .citation dt {
+  color: var(--legend-cream-300);
+}
+
+.citation dd {
+  margin: 0;
+  font-size: 0.9375rem;
+}
+
+.citation a {
+  word-break: break-word;
+}
+
+/* ============================================================
+   PRIMITIVE 3 — Standards table
+   Sticky header, monospace standard codes, hover rows.
+   ============================================================ */
+
+.standards-table {
+  width: 100%;
+  margin: 1.5rem 0 2rem;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.9375rem;
+  border: 1px solid var(--legend-rule);
+  border-radius: var(--legend-radius-md);
+  overflow: hidden;
+}
+
+.standards-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--legend-cream-100);
+  text-align: left;
+  font-family: var(--legend-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--legend-warm-700);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--legend-rule-strong);
+}
+
+.dark .standards-table thead th {
+  color: var(--legend-cream-300);
+}
+
+.standards-table tbody td {
+  padding: 0.875rem 1rem;
+  vertical-align: top;
+  border-bottom: 1px solid var(--legend-rule);
+  line-height: 1.55;
+}
+
+.standards-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.standards-table tbody tr:hover {
+  background: var(--legend-primary-soft);
+}
+
+.standards-table td:first-child,
+.standards-table th:first-child {
+  font-family: var(--legend-mono);
+  font-size: 0.8125rem;
+  white-space: nowrap;
+  color: var(--legend-primary-strong);
+  font-weight: 500;
+  width: 1%;
+}
+
+.dark .standards-table td:first-child {
+  color: var(--legend-primary-light);
+}
+
+/* ============================================================
+   PRIMITIVE 4 — Canonical summary
+   Final extractable block; LLM-friendly, denser type, no chrome.
+   ============================================================ */
+
+.canonical-summary {
+  margin: 3rem 0 1.5rem;
+  padding: 1.25rem 1.5rem;
+  border-top: 1px solid var(--legend-rule);
+  border-bottom: 1px solid var(--legend-rule);
+  background: transparent;
+}
+
+.canonical-summary::before {
+  content: "Canonical summary";
+  display: block;
+  font-family: var(--legend-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--legend-warm-700);
+  margin-bottom: 0.5rem;
+}
+
+.dark .canonical-summary::before {
+  color: var(--legend-cream-300);
+}
+
+.canonical-summary p {
+  margin: 0;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--legend-warm-800);
+}
+
+.dark .canonical-summary p {
+  color: var(--legend-cream-200);
+}
+
+.canonical-summary p + p {
+  margin-top: 0.5rem;
+}
+
+/* ============================================================
+   Print stylesheet — teacher-friendly handout
+   ============================================================ */
+
+@media print {
+  :root {
+    color-scheme: light only;
+  }
+
+  #navbar,
+  #sidebar,
+  nav,
+  footer,
+  toc-item,
+  [data-toc],
+  button,
+  .navbar,
+  .sidebar {
+    display: none !important;
+  }
+
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+    color: #000 !important;
+    background: #fff !important;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+
+  .answer-box,
+  .citation,
+  .canonical-summary {
+    break-inside: avoid;
+    background: #fff !important;
+    border: 1px solid #000 !important;
+  }
+
+  .standards-table {
+    border: 1px solid #000 !important;
+  }
+
+  .standards-table thead th {
+    background: #f3f3f3 !important;
+    color: #000 !important;
+  }
 }

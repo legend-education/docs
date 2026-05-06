@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "$comment": "Author and reviewer profiles referenced by frontmatter `author` and `reviewer` keys. Pattern: schema.org/Person.",
+  "authors": {
+    "legend-editorial": {
+      "@type": "Person",
+      "name": "Legend Standards Editorial",
+      "jobTitle": "Editorial team",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Legend",
+        "url": "https://legend.org"
+      },
+      "url": "https://standards.legend.org/about"
+    }
+  },
+  "reviewers": {}
+}

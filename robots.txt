@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Allow LLM crawlers explicitly — content is built for AI extraction.
+User-agent: GPTBot
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://standards.legend.org/sitemap.xml
