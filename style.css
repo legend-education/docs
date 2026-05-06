@@ -118,6 +118,46 @@ toc-item[data-active-deepest] > a::before {
   height: auto;
 }
 
+/* ------------------------------------------------------------
+   Topbar product label — divider + "Standards" wordmark to the
+   right of the Legend logo. lg breakpoint matches Mintlify's
+   own responsive pattern so it cleanly hides on mobile.
+   ------------------------------------------------------------ */
+
+#navbar a[href="/"] {
+  display: inline-flex;
+  align-items: center;
+}
+
+#navbar a[href="/"]::after {
+  content: "Standards";
+  display: inline-flex;
+  align-items: center;
+  height: 1.5rem;
+  margin-left: 1rem;
+  padding-left: 1rem;
+  border-left: 1px solid rgba(33, 31, 29, 0.28);
+  font-family: var(--legend-mono);
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #211f1d;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.dark #navbar a[href="/"]::after {
+  color: #efeeed;
+  border-left-color: rgba(244, 237, 232, 0.28);
+}
+
+@media (max-width: 480px) {
+  #navbar a[href="/"]::after {
+    display: none;
+  }
+}
+
 a[nav-tabs-item] {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

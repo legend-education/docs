@@ -52,8 +52,17 @@
         "tab": "Standards",
         "groups": [
           {
-            "group": "Welcome",
-            "pages": ["standards/index"]
+            "group": "Guides",
+            "pages": [
+              "standards/index",
+              "standards/guides/what-are-learning-standards",
+              "standards/guides/standards-vs-curriculum-vs-rubrics",
+              "standards/guides/turn-a-standard-into-a-rubric",
+              "standards/guides/write-feedback-from-a-standard",
+              "standards/guides/align-an-assignment-to-standards",
+              "standards/guides/map-student-work-to-skills",
+              "standards/guides/differentiate-feedback-by-standard"
+            ]
           },
           {
             "group": "Common Core",
@@ -108,6 +117,14 @@
                       "standards/common-core/ela/literacy-science-technical/grades-6-8",
                       "standards/common-core/ela/literacy-science-technical/grades-9-10",
                       "standards/common-core/ela/literacy-science-technical/grades-11-12"
+                    ]
+                  },
+                  {
+                    "group": "Per-standard examples",
+                    "pages": [
+                      "standards/common-core/ela/grade-9-10-writing",
+                      "standards/common-core/ela/w-9-10-1",
+                      "standards/common-core/ela/w-9-10-2"
                     ]
                   }
                 ]
@@ -254,19 +271,68 @@
             ]
           },
           {
-            "group": "Science",
-            "pages": ["standards/ngss/index"]
-          },
-          {
-            "group": "State standards",
-            "pages": ["standards/state-standards/index"]
+            "group": "Science (NGSS)",
+            "pages": [
+              "standards/ngss/index",
+              "standards/ngss/high-school-biology",
+              "standards/ngss/hs-ls1-1"
+            ]
           },
           {
             "group": "Frameworks",
             "pages": [
-              "standards/frameworks/casel",
-              "standards/frameworks/iste",
-              "standards/frameworks/wida"
+              "standards/c3-framework",
+              "standards/wida",
+              "standards/iste",
+              "standards/casel",
+              "standards/udl"
+            ]
+          },
+          {
+            "group": "State standards",
+            "pages": [
+              "standards/state-standards/index",
+              "standards/state-standards/new-york",
+              "standards/state-standards/california",
+              "standards/state-standards/texas",
+              "standards/state-standards/florida"
+            ]
+          },
+          {
+            "group": "Assessments",
+            "pages": [
+              "standards/assessments/index",
+              {
+                "group": "AP",
+                "pages": [
+                  "standards/assessments/ap/index",
+                  "standards/assessments/ap/english-language",
+                  "standards/assessments/ap/biology"
+                ]
+              },
+              {
+                "group": "SAT",
+                "pages": [
+                  "standards/assessments/sat/index",
+                  "standards/assessments/sat/reading-writing"
+                ]
+              },
+              {
+                "group": "ACT",
+                "pages": [
+                  "standards/assessments/act/index",
+                  "standards/assessments/act/writing-rubric"
+                ]
+              }
+            ]
+          },
+          {
+            "group": "Reference",
+            "pages": [
+              "standards/reference/skills-taxonomy",
+              "standards/reference/rubric-categories",
+              "standards/reference/grade-bands",
+              "standards/reference/framework-crosswalks"
             ]
           }
         ]
