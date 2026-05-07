@@ -425,7 +425,7 @@ pages.push({
       }) +
       "# What are the Common Core State Standards?\n\n" +
       answerBox(
-        "TODO: 50–80 word direct answer summarizing CCSS adoption, the two subjects (ELA and Math), and how the grade-level structure works.",
+        "TODO: 50–80 word simple summary of CCSS adoption, the two subjects (ELA and Math), and how the grade-level structure works.",
       ) +
       breadcrumb([
         { name: "Standards", path: "/standards" },
@@ -466,7 +466,7 @@ pages.push({
       }) +
       "# What are the Common Core ELA standards?\n\n" +
       answerBox(
-        "TODO: 50–80 word direct answer covering the four ELA strands (Reading, Writing, Speaking & Listening, Language), grade structure (K-5 grade-by-grade, 6-8 grade-by-grade, 9-12 in two bands), and the literacy-in-content-areas extensions for grades 6-12.",
+        "TODO: 50–80 word simple summary covering the four ELA strands (Reading, Writing, Speaking & Listening, Language), grade structure (K-5 grade-by-grade, 6-8 grade-by-grade, 9-12 in two bands), and the literacy-in-content-areas extensions for grades 6-12.",
       ) +
       breadcrumb([
         { name: "Standards", path: "/standards" },
@@ -523,7 +523,7 @@ pages.push({
       }) +
       "# What are the Common Core ELA Anchor Standards?\n\n" +
       answerBox(
-        "TODO: 50–80 word direct answer explaining that the CCR Anchor Standards (CCRA) are the K-12 spine of Common Core ELA. Each grade-level standard maps to one anchor; together they define college and career readiness in reading, writing, speaking & listening, and language.",
+        "TODO: 50–80 word simple summary explaining that the CCR Anchor Standards (CCRA) are the K-12 spine of Common Core ELA. Each grade-level standard maps to one anchor; together they define college and career readiness in reading, writing, speaking & listening, and language.",
       ) +
       breadcrumb([
         { name: "Standards", path: "/standards" },
@@ -567,7 +567,7 @@ for (const s of ELA_ANCHOR_STRANDS) {
         }) +
         `# What are the Common Core ${s.label} anchor standards?\n\n` +
         answerBox(
-          `TODO: 50–80 word direct answer covering all ${s.count} CCRA.${s.label[0]} anchors and how grade-level standards map to them.`,
+          `TODO: 50–80 word simple summary covering all ${s.count} CCRA.${s.label[0]} anchors and how grade-level standards map to them.`,
         ) +
         breadcrumb([
           { name: "Standards", path: "/standards" },
@@ -647,7 +647,7 @@ for (let i = 0; i < ELA_GRADE_LIST.length; i++) {
             { name: g.label, path: urlPath },
           ],
           what,
-          todoAnswer: `TODO: 50–80 word direct answer summarizing the ${g.label} ELA standards.`,
+          todoAnswer: `TODO: 50–80 word simple summary of the ${g.label} ELA standards.`,
           todoSummary: `TODO: 60–100 word extractable summary of ${g.label} ELA expectations.`,
         })
       );
@@ -672,7 +672,7 @@ for (const hub of ELA_LITERACY) {
             urlPath,
           }) +
           `# What are the Common Core ${hub.label} standards for ${b.label}?\n\n` +
-          answerBox(`TODO: 50–80 word direct answer for ${hub.label} at ${b.label}.`) +
+          answerBox(`TODO: 50–80 word simple summary for ${hub.label} at ${b.label}.`) +
           breadcrumb([
             { name: "Standards", path: "/standards" },
             { name: "Common Core", path: "/standards/common-core" },
@@ -712,7 +712,7 @@ pages.push({
       }) +
       "# What are the Common Core Math standards?\n\n" +
       answerBox(
-        "TODO: 50–80 word direct answer explaining the two parts of CCSS Math: 8 Standards for Mathematical Practice (cross-grade) and content standards (K-8 grade-by-grade plus high school by conceptual category).",
+        "TODO: 50–80 word simple summary explaining the two parts of CCSS Math: 8 Standards for Mathematical Practice (cross-grade) and content standards (K-8 grade-by-grade plus high school by conceptual category).",
       ) +
       breadcrumb([
         { name: "Standards", path: "/standards" },
@@ -759,7 +759,7 @@ pages.push({
       }) +
       "# What are the Standards for Mathematical Practice?\n\n" +
       answerBox(
-        "TODO: 50–80 word direct answer explaining MP1-MP8 as the cross-grade habits of mind in Common Core Math.",
+        "TODO: 50–80 word simple summary explaining MP1-MP8 as the cross-grade habits of mind in Common Core Math.",
       ) +
       breadcrumb([
         { name: "Standards", path: "/standards" },
@@ -800,7 +800,7 @@ for (let i = 0; i < MATH_PRACTICE.length; i++) {
           urlPath,
         }) +
         `# What does Mathematical Practice ${mp.num} (MP${mp.num}) mean?\n\n` +
-        answerBox(`TODO: 50–80 word direct answer explaining MP${mp.num}: ${mp.label}.`) +
+        answerBox(`TODO: 50–80 word simple summary explaining MP${mp.num}: ${mp.label}.`) +
         breadcrumb([
           { name: "Standards", path: "/standards" },
           { name: "Common Core", path: "/standards/common-core" },
@@ -854,7 +854,7 @@ for (let gi = 0; gi < MATH_GRADES.length; gi++) {
         }) +
         `# What are the Common Core Math standards for ${g.label}?\n\n` +
         answerBox(
-          `TODO: 50–80 word direct answer summarizing ${g.label} math expectations across ${g.domains.length} domains.`,
+          `TODO: 50–80 word simple summary of ${g.label} math expectations across ${g.domains.length} domains.`,
         ) +
         breadcrumb([
           { name: "Standards", path: "/standards" },
@@ -899,7 +899,7 @@ for (let gi = 0; gi < MATH_GRADES.length; gi++) {
             urlPath,
           }) +
           `# What are the Common Core ${d.label} standards for ${g.label}?\n\n` +
-          answerBox(`TODO: 50–80 word direct answer covering ${g.label} ${d.label} domain standards.`) +
+          answerBox(`TODO: 50–80 word simple summary covering ${g.label} ${d.label} domain standards.`) +
           breadcrumb([
             { name: "Standards", path: "/standards" },
             { name: "Common Core", path: "/standards/common-core" },
@@ -947,7 +947,7 @@ pages.push({
       }) +
       "# What are the Common Core math standards for high school?\n\n" +
       answerBox(
-        "TODO: 50–80 word direct answer explaining that high school CCSS Math is organized by 6 conceptual categories rather than by grade.",
+        "TODO: 50–80 word simple summary explaining that high school CCSS Math is organized by 6 conceptual categories rather than by grade.",
       ) +
       breadcrumb([
         { name: "Standards", path: "/standards" },
@@ -984,7 +984,7 @@ for (const c of MATH_HS) {
           urlPath,
         }) +
         `# What are the Common Core high school ${c.label} standards?\n\n` +
-        answerBox(`TODO: 50–80 word direct answer covering the high school ${c.label} conceptual category.`) +
+        answerBox(`TODO: 50–80 word simple summary covering the high school ${c.label} conceptual category.`) +
         breadcrumb([
           { name: "Standards", path: "/standards" },
           { name: "Common Core", path: "/standards/common-core" },

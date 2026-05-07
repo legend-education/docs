@@ -56,7 +56,7 @@ function placeholderBody(title, urlPath) {
     `# ${title}`,
     "",
     `<div class="answer-box">`,
-    `TODO: 50–80 word direct answer. Placeholder — content coming soon.`,
+    `TODO: 50–80 word simple summary. Placeholder — content coming soon.`,
     `</div>`,
     "",
     `## What this page will cover`,

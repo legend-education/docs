@@ -2,6 +2,9 @@
 # .git, .github, .claude, .agents, .idea, node_modules,
 # README.md, LICENSE.md, CHANGELOG.md, CONTRIBUTING.md
 
+# Cursor agent skills, rules, plans (not user-facing docs)
+.cursor/
+
 # Draft content
 drafts/
 *.draft.mdx

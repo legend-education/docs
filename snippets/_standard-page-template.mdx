@@ -6,7 +6,7 @@
   a new page. The leading underscore marks it as internal-only.
 
   Visual primitives are styled in /style.css:
-    - <div class="answer-box">       (Direct answer — top of page)
+    - <div class="answer-box">       (Simple summary — top of page)
     - <table class="standards-table">(Per-standard table)
     - <div class="citation">         (Official source block)
     - <div class="canonical-summary">(Final extractable summary)
@@ -16,7 +16,7 @@
     ---
     title: "What are the Common Core ELA standards for Grade 9 writing?"
     sidebarTitle: "Grade 9-10 writing"
-    description: "50–80 word direct answer suitable for an LLM extractive snippet."
+    description: "50–80 word simple summary suitable for an LLM extractive snippet."
     keywords: ["Common Core", "Grade 9 writing", "W.9-10.1"]
     "og:title": "Grade 9-10 writing — Common Core ELA"
     "og:description": "..."
@@ -33,7 +33,7 @@
   Section order (every page):
 
     1. H1               — matches an actual teacher search query
-    2. Answer box       — 50-80 word direct answer
+    2. Answer box       — 50-80 word simple summary
     3. JSON-LD scripts  — BreadcrumbList + LearningResource (+ DefinedTerm / FAQPage where applicable)
     4. What it covers   — bullet list of strands/domains/skills
     5. Standards table  — code | official | plain meaning | student skill | example
@@ -47,7 +47,7 @@
 # H1 matching the target search query
 
 <div class="answer-box">
-  Replace this with a 50–80 word plain-English direct answer to the H1.
+  Replace this with a 50–80 word plain-English simple summary that answers the H1.
   Avoid jargon and marketing copy. This block is intentionally extractable
   by Google AI Overviews, Perplexity, and ChatGPT.
 </div>

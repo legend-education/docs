@@ -158,6 +158,28 @@ toc-item[data-active-deepest] > a::before {
   }
 }
 
+/* ------------------------------------------------------------
+   Pin the desktop search button into the navbar, aligned with
+   the left edge of the main content card. Keeps the existing
+   search button width — it just moves up into the navbar.
+   ------------------------------------------------------------ */
+
+@media (min-width: 1024px) {
+  #search-bar-entry {
+    position: fixed !important;
+    top: 0.625rem; /* vertically centered in 3.5rem navbar with h-9 button */
+    left: 17rem;   /* almond layout px-2 (0.5rem) + sidebar w-[16.5rem] */
+    width: 14rem !important;
+    z-index: 50;   /* above #navbar (z-30) */
+  }
+
+  /* Slide sidebar nav items up to fill the empty space the
+     search bar used to occupy at the top of the sidebar. */
+  #navigation-items {
+    top: 0.25rem !important;
+  }
+}
+
 a[nav-tabs-item] {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -183,7 +205,7 @@ a[nav-tabs-item] {
 
 /* ============================================================
    PRIMITIVE 1 — Answer box
-   The 50-80 word direct answer that sits at the top of every
+   The 50-80 word simple summary that sits at the top of every
    standards page. Designed to be quotable by an LLM.
    ============================================================ */
 
@@ -198,7 +220,7 @@ a[nav-tabs-item] {
 }
 
 .answer-box::before {
-  content: "Direct answer";
+  content: "Simple summary";
   display: block;
   font-family: var(--legend-mono);
   font-size: 0.6875rem;

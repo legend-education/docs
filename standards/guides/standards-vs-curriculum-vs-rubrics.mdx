@@ -1,28 +1,511 @@
 ---
 title: "Standards vs. curriculum vs. rubrics"
 sidebarTitle: "Standards vs. curriculum vs. rubrics"
-description: "How learning standards, curriculum, and rubrics differ, and how the three fit together in real classroom planning and assessment."
-keywords: ["standards vs curriculum", "rubrics"]
-"og:title": "Standards vs. curriculum vs. rubrics"
-"og:description": "How learning standards, curriculum, and rubrics differ, and how the three fit together in real classroom planning and assessment."
+description: "A plain-English guide to the difference between learning standards, curriculum, and rubrics — what each one is, who owns it, and how they connect."
+keywords: ["standards vs curriculum", "standards vs rubrics", "curriculum vs rubric", "what is a learning standard", "rubric design", "backward design", "Common Core", "ESSA", "Wiggins McTighe"]
+"og:title": "Standards vs. curriculum vs. rubrics — a plain-English guide"
+"og:description": "Tell standards, curriculum, and rubrics apart. Plain definitions, side-by-side examples, and a diagnostic you can use on any sentence."
 "og:image": "/og/default.png"
 "twitter:card": "summary_large_image"
 canonical: "https://standards.legend.org/standards/guides/standards-vs-curriculum-vs-rubrics"
 robots: "index,follow,max-snippet:-1,max-image-preview:large"
 author: "Legend Standards Editorial"
-last_updated: "2026-05-06"
+last_updated: "2026-05-07"
 ---
 # Standards vs. curriculum vs. rubrics
 
 <div class="answer-box">
-TODO: 50–80 word direct answer. Placeholder — content coming soon.
+A **standard** is the destination — what every student should know and be able to do by the end of a grade or course. A **curriculum** is the route — the units, texts, lessons, and tasks a school chooses to get students there. A **rubric** is the measuring stick — the levels and descriptions teachers use to judge a single piece of student work against the standard. One standard. Many curricula. Many rubrics. They are not the same thing, and grading goes wrong when teachers treat them as if they are.
+</div>
+<script type="application/ld+json">{`
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Standards", "item": "https://standards.legend.org/standards" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://standards.legend.org/standards/guides" },
+    { "@type": "ListItem", "position": 3, "name": "Standards vs. curriculum vs. rubrics", "item": "https://standards.legend.org/standards/guides/standards-vs-curriculum-vs-rubrics" }
+  ]
+}
+`}</script>
+<script type="application/ld+json">{`
+{
+  "@context": "https://schema.org",
+  "@type": "LearningResource",
+  "name": "Standards vs. curriculum vs. rubrics — a plain-English guide",
+  "url": "https://standards.legend.org/standards/guides/standards-vs-curriculum-vs-rubrics",
+  "inLanguage": "en",
+  "educationalLevel": "K-12",
+  "learningResourceType": "Explainer",
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": ["teacher", "instructionalCoach", "administrator", "curriculumDirector"]
+  },
+  "dateModified": "2026-05-07"
+}
+`}</script>
+
+## The 30-second version
+
+- A **standard** is a public goal: *students will write arguments using valid reasoning and sufficient evidence.*
+- A **curriculum** is the local plan that gets students to that goal: the units, texts, sequence, and pacing.
+- A **rubric** is the tool teachers use to grade a single piece of work against the standard.
+- One standard supports **many** curricula. One curriculum can be graded with **many** rubrics. Standards stay fixed; the path and the measuring stick are local choices.
+- If you can change it without a state board vote, it is not a standard.
+
+<Note>
+**Why this page exists.** Most grading problems start as definition problems. When teachers, parents, or admins use these three words interchangeably, the rubric ends up grading effort, the curriculum ends up driving the report card, and the standard quietly disappears. This page gives you the cleanest distinctions we can write, plus a diagnostic you can run on any sentence in five seconds.
+</Note>
+
+## A picture before the words
+
+Standards, curriculum, and rubrics sit on top of each other like layers of a cake. The standard is the goal at the top. The curriculum is the route. Instruction is what happens day to day. The rubric closes the loop by sending evidence back up.
+
+```mermaid
+flowchart TD
+  S["<b>Standard</b><br/><i>The public goal</i><br/>Set by the state.<br/>Same for every student in the grade."]
+  C["<b>Curriculum</b><br/><i>The local plan</i><br/>Set by the district or school.<br/>Units, texts, pacing, tasks."]
+  I["<b>Instruction</b><br/><i>The day-to-day moves</i><br/>Set by the teacher.<br/>Lessons, modeling, conferring."]
+  R["<b>Rubric &amp; assessment</b><br/><i>The measuring stick</i><br/>Set by the teacher or team.<br/>Criteria + levels for one task."]
+  S --> C --> I --> R
+  R -. evidence of mastery .-> S
+  classDef goal fill:#12936B,stroke:#0E7553,color:#fff,rx:8,ry:8;
+  classDef plan fill:#fdf6f0,stroke:#0E7553,color:#211f1d,rx:8,ry:8;
+  class S goal
+  class C,I,R plan
+```
+
+The arrow back from rubric to standard matters. A rubric only earns its keep if the evidence it produces tells you whether students are hitting the standard. A rubric that grades neatness, page count, or "effort" can get a perfect score without ever touching the standard.
+
+## A short analogy that sticks
+
+If the layered cake feels abstract, try this one. A road trip has four parts:
+
+| Road trip | Classroom |
+| --- | --- |
+| The destination | The **standard** — where every student needs to end up |
+| The route on the map | The **curriculum** — the order of stops, the highways and side roads |
+| How you drive that day | **Instruction** — the moves the teacher makes Tuesday morning |
+| The postcard you send home | The **rubric** — short, specific, and proof you got there |
+
+Two teachers can drive very different routes to the same destination. They can send very different postcards. The destination is the part that does not move.
+
+## The cleanest definitions we can write
+
+<CardGroup cols={3}>
+  <Card title="Standard" icon="flag">
+    **What it is:** A public statement of what students should know and be able to do.
+    
+    **Who writes it:** A state board of education, often using a shared framework like Common Core or NGSS.
+    
+    **Time horizon:** A grade level or a course.
+    
+    **You change it by:** A formal state-level adoption process. Not by a teacher. Not by a school.
+    
+    **Example:** *Write arguments to support claims using valid reasoning and sufficient evidence.* (`W.9-10.1`)
+  </Card>
+  <Card title="Curriculum" icon="map">
+    **What it is:** The local plan for getting students to the standard — units, texts, tasks, pacing, and materials.
+    
+    **Who writes it:** A district, school, department, or teacher team. Sometimes a publisher.
+    
+    **Time horizon:** A unit, a quarter, a year, a course sequence.
+    
+    **You change it by:** A local decision. A teacher team can revise a unit between Friday and Monday.
+    
+    **Example:** *Unit 3, "Argument and Evidence" — read three op-eds, draft a 1,200-word essay, peer review, revise, submit.*
+  </Card>
+  <Card title="Rubric" icon="ruler">
+    **What it is:** The criteria and levels used to score one task or product against the standard.
+    
+    **Who writes it:** A teacher, a teacher team, or a curriculum publisher.
+    
+    **Time horizon:** A single assignment or a small set of similar assignments.
+    
+    **You change it by:** A teacher edit. The rubric should change when the task changes.
+    
+    **Example:** *4 = answers a strong counterclaim with specific evidence. 3 = acknowledges a counterclaim. 2 = ignores counterclaim. 1 = no claim.*
+  </Card>
+</CardGroup>
+
+<Tip>
+A working test: if a sentence says **what students will know or do**, it is a standard. If it says **what gets taught and in what order**, it is curriculum. If it says **what counts as good or not yet there on this task**, it is a rubric.
+</Tip>
+
+## Anatomy, side by side
+
+Each of the three has a small set of moving parts. Knowing the parts helps you read any document and place it in the right bucket.
+
+| Moving part | Standard | Curriculum | Rubric |
+| --- | --- | --- | --- |
+| **Audience** | Students, families, the public | Teachers, students | Teachers, students |
+| **Verb tells you** | The cognitive demand (write, model, evaluate) | The instructional move (read, draft, revise, discuss) | The level of quality (cites, names, attempts) |
+| **Specificity** | Grade or course | Unit, week, lesson | One task |
+| **Owns the rigor** | Yes | Inherits it from the standard | Operationalizes it |
+| **Mentions a text or material** | No | Yes | Sometimes |
+| **Mentions a number of pages, days, or minutes** | No | Yes | Sometimes (length, sources) |
+| **Has levels of proficiency** | No | No | Yes (3-5 levels) |
+| **Changes between teachers** | No | Yes | Yes |
+| **Legally binding on the school** | Yes (state board adopted) | Often (board adopted curriculum) | No |
+
+The pattern is the same all the way down: standards are the most general and the most permanent, rubrics are the most specific and the most local, and curriculum lives in between.
+
+## Who owns what
+
+Confusion about these three words is usually confusion about who gets to change them. Here is the chain, from highest authority to most local.
+
+```mermaid
+flowchart LR
+  Federal["<b>Federal (ESSA, 2015)</b><br/>Requires states to have standards.<br/>Cannot write or pick them."]
+  State["<b>State board of education</b><br/>Adopts the standards.<br/>Owns the destination."]
+  District["<b>District</b><br/>Adopts curriculum and pacing.<br/>Owns the route."]
+  School["<b>School &amp; team</b><br/>Adapts curriculum.<br/>Builds shared rubrics."]
+  Teacher["<b>Teacher</b><br/>Designs daily instruction.<br/>Tunes the rubric for one task."]
+  Federal --> State --> District --> School --> Teacher
+  classDef law fill:#211f1d,stroke:#211f1d,color:#fff,rx:6,ry:6;
+  classDef policy fill:#12936B,stroke:#0E7553,color:#fff,rx:6,ry:6;
+  classDef local fill:#fdf6f0,stroke:#0E7553,color:#211f1d,rx:6,ry:6;
+  class Federal law
+  class State policy
+  class District,School,Teacher local
+```
+
+A few useful consequences fall out of this picture:
+
+- A teacher cannot make a standard "easier." A teacher can change the **path** to the standard.
+- A district cannot ban a standard. A district picks the curriculum that walks students through it.
+- Two schools in the same district can teach the same standards with different curricula, and that is fine.
+- Two teachers in the same building can use the same curriculum but different rubrics, and that is also fine — as long as both rubrics measure the standard.
+
+## One standard, many paths
+
+This is the picture most teachers wish they had seen on day one of pre-service. A single standard can be reached through many curricula. A single curriculum can be assessed with many rubrics. The standard is one. The choices below it multiply.
+
+```mermaid
+flowchart TB
+  S(("<b>W.9-10.1</b><br/>Write arguments using<br/>valid reasoning and<br/>sufficient evidence"))
+  C1["Curriculum A<br/><i>EngageNY 9th grade</i><br/>Module 4: argumentative essay"]
+  C2["Curriculum B<br/><i>Local IB unit</i><br/>Op-ed on a local issue"]
+  C3["Curriculum C<br/><i>Project-based</i><br/>Mock policy debate &amp; brief"]
+  R1["Rubric A1<br/><i>Six-trait + counterclaim</i>"]
+  R2["Rubric A2<br/><i>State writing rubric</i>"]
+  R3["Rubric B1<br/><i>IB criterion C: producing text</i>"]
+  R4["Rubric C1<br/><i>Policy memo rubric</i>"]
+  S --> C1
+  S --> C2
+  S --> C3
+  C1 --> R1
+  C1 --> R2
+  C2 --> R3
+  C3 --> R4
+  classDef goal fill:#12936B,stroke:#0E7553,color:#fff;
+  classDef curr fill:#fdf6f0,stroke:#0E7553,color:#211f1d,rx:6,ry:6;
+  classDef rub fill:#f4ede8,stroke:#7f9e4d,color:#211f1d,rx:6,ry:6;
+  class S goal
+  class C1,C2,C3 curr
+  class R1,R2,R3,R4 rub
+```
+
+Read the picture from the top. The standard is one node. Below it, three different curricula could carry students there. Below those, four different rubrics could grade the work. None of those rubrics is "the" rubric for `W.9-10.1`. Each is a measuring stick for one specific task that asks students to do what the standard requires.
+
+## A worked example: W.9-10.1, two ways
+
+To make the difference concrete, here is the same standard with two very different units below it. Each unit ends with one rubric, and both rubrics are valid because both ask students to do the verb in the standard.
+
+<Tabs>
+  <Tab title="Standard">
+    **`CCSS.ELA-LITERACY.W.9-10.1` — Argument writing, grades 9-10**
+
+    > Write arguments to support claims in an analysis of substantive topics or texts, using valid reasoning and relevant and sufficient evidence.
+
+    **The verbs in the standard:** *write, support, analyze.*
+    **The non-negotiable criteria:** *valid reasoning, relevant evidence, sufficient evidence.*
+
+    Anything below this line is a local choice.
+  </Tab>
+  <Tab title="Unit A — Op-ed on a local issue">
+    **Curriculum slice (week-by-week):**
+
+    1. Read three op-eds about a local policy debate.
+    2. Identify each author's claim, evidence, and counterclaim.
+    3. Draft an 800-word op-ed on the same debate.
+    4. Peer review using the rubric below.
+    5. Revise. Submit to the school paper.
+
+    **Rubric — argument and evidence (1 of 4 traits):**
+
+    | Level | Argument and evidence |
+    | --- | --- |
+    | 4 | Names a clear claim, answers at least one strong counterclaim, supports both sides with specific local evidence. |
+    | 3 | Names a clear claim and supports it with relevant evidence. Mentions a counterclaim. |
+    | 2 | Names a claim. Evidence is general or off-topic. No counterclaim. |
+    | 1 | No clear claim, or claim is unsupported. |
+  </Tab>
+  <Tab title="Unit B — Mock policy brief">
+    **Curriculum slice (week-by-week):**
+
+    1. Read two policy briefs and one academic article.
+    2. Choose a policy position. Build an evidence table with at least six sources.
+    3. Draft a 1,500-word policy brief.
+    4. Mock hearing — defend the brief in a 5-minute statement plus Q&A.
+    5. Revise based on the hearing transcript.
+
+    **Rubric — claim and evidence (1 of 5 traits):**
+
+    | Level | Claim and evidence |
+    | --- | --- |
+    | 4 | Claim is precise and policy-actionable. Six or more credible sources, varied in type, used in support of the claim. Strongest counterclaim is named and refuted with evidence. |
+    | 3 | Claim is precise. Five credible sources used in support. A counterclaim is named. |
+    | 2 | Claim is broad. Sources are mostly one type. Counterclaim is missing or only mentioned. |
+    | 1 | No clear claim, or sources are not used to support it. |
+  </Tab>
+</Tabs>
+
+The two units share **one** standard. Each ends with **its own** rubric, written for the specific task. A student could earn a 4 on Unit A and a 2 on Unit B in the same year. That is not a contradiction. It is the system working as designed: the standard is fixed, but the evidence has to be specific to the work in front of the teacher.
+
+## A second example, in math
+
+The same logic holds for math. Here, one standard sits above two very different tasks.
+
+> *Interpret a fraction as division of the numerator by the denominator (a/b = a ÷ b). Solve word problems involving division of whole numbers leading to answers in the form of fractions or mixed numbers.*
+> — `CCSS.MATH.CONTENT.5.NF.B.3`
+
+**Curriculum slice A — Sharing pizzas.** Students model 3 pizzas split among 4 friends with paper circles, write the result as a fraction, and explain the connection to division.
+
+**Curriculum slice B — Splitting a hike.** Students plan a 7-mile hike split into 4 equal segments. They calculate the length of each segment as a mixed number and write a one-paragraph trail-report explanation.
+
+**Rubric A — modeling fluency:** scored on the accuracy of the visual model, the matching equation, and the verbal explanation.
+
+**Rubric B — applied reasoning:** scored on the accuracy of the calculation, the choice of mixed-number form, and the clarity of the written explanation.
+
+Both rubrics live under the same standard. Neither rubric is wrong. Each is tuned to the task it grades.
+
+## Pop quiz: standard, curriculum, or rubric?
+
+Run this on any sentence you are unsure about. The verb is usually the giveaway.
+
+| Sentence | What it is | Why |
+| --- | --- | --- |
+| *Students cite specific textual evidence to support analysis of what the text says.* | **Standard** | A public outcome statement. Verbs name a cognitive performance, not a teacher move. |
+| *On Tuesday, model "evidence-then-warrant" using the mentor text on page 47.* | **Curriculum / instruction** | Names a day, a text, and a teaching move. Local choice. |
+| *4/4 — Each claim is supported by at least two pieces of textual evidence with quoted phrases.* | **Rubric** | Names a level of quality and the criteria for that level. |
+| *By the end of grade 5, students can multiply and divide multi-digit whole numbers fluently.* | **Standard** | Year-end outcome. Public, fixed. |
+| *Use the GoMath workbook chapter 6 quiz as the unit summative.* | **Curriculum** | Names a material and a use. Local choice. |
+| *Score 3: Solves the problem correctly and shows a strategy, but the explanation is incomplete.* | **Rubric** | Quality level + descriptor for one task. |
+| *Students will be able to write a thesis statement.* | **Learning target** (a slice of a standard) | A weekly or daily "I can" — narrower than a standard, broader than a rubric row. |
+
+<Tip>
+The fastest classifier we know: ask the four-question test below. If you can answer all four, you have classified the sentence correctly.
+</Tip>
+
+## The four-question test
+
+Hold any sentence up against these four questions. The pattern of answers tells you what you are looking at.
+
+```
+                 STANDARD     CURRICULUM    RUBRIC
+                 ────────     ──────────    ──────
+1. Who wrote it?  state         district     teacher
+                                or school    or team
+
+2. How long is    a year        weeks-       one task
+   the time
+   horizon?       or course     months
+
+3. Does it name   no            yes          sometimes
+   a text or
+   material?
+
+4. Does it have   no            no           yes
+   levels of
+   quality?
+```
+
+If three of those four answers point to the same column, you have your answer. If the answers are mixed, you are probably reading a hybrid document — and most "rubric" handouts in real classrooms are exactly that. Pulling them apart is half the battle.
+
+## Where confusion comes from
+
+Most arguments about these three words are not really about the words. They are about three honest mistakes.
+
+<AccordionGroup>
+  <Accordion title="Mistake 1: Treating the textbook table of contents as the standards.">
+    A publisher's scope and sequence is curriculum, not standards. A textbook can be aligned to a standard, partially aligned, or out of sync entirely. The table of contents tells you what the publisher chose to teach. The standards tell you what the state requires. They are not the same document, and they should not be the same conversation.
+
+    Fix: when you plan a unit, open the standards document on one screen and the curriculum on the other. Confirm each unit's "north star" standard is actually being taught at the depth the standard asks for.
+  </Accordion>
+  <Accordion title="Mistake 2: Writing a rubric that grades the assignment instead of the standard.">
+    A rubric that scores "5 paragraphs, MLA format, no spelling errors, on time" measures compliance, not the standard. Students can hit every row of that rubric and never write a real argument.
+
+    Fix: for every rubric row, ask the question: "If a student earns a 4 on this row, can I point to specific evidence that they did the verb in the standard?" If not, rewrite the row.
+  </Accordion>
+  <Accordion title="Mistake 3: Treating the rubric as the standard.">
+    Rubrics are easier to write than standards. A team will spend Friday afternoon "writing the rubric" and quietly skip the harder step of unpacking the standard. The rubric becomes the goal. The standard quietly disappears.
+
+    Fix: keep a paper copy of the standard at the top of the rubric document. Every row of the rubric should be traceable, in plain English, to a phrase in that standard.
+  </Accordion>
+  <Accordion title="Mistake 4: Treating the curriculum as untouchable.">
+    The curriculum is the most flexible of the three, not the most fixed. Districts adopt it, but teachers can adapt it, swap texts, change the sequence, and rebuild the final task. The standard does not move. The curriculum should.
+
+    Fix: when a unit is not getting students to the standard, change the unit. Do not lower the standard, and do not change the rubric to match the work students happened to produce.
+  </Accordion>
+</AccordionGroup>
+
+## What breaks when you confuse them
+
+| If you confuse... | What happens |
+| --- | --- |
+| **Standard with curriculum** | Teachers feel boxed in and complain that "the standards tell me what to teach Tuesday." They don't. The pacing guide does. |
+| **Curriculum with standard** | A district swap of textbooks gets framed as "changing the standards." It isn't. The destination is the same; the route changed. |
+| **Standard with rubric** | The grade book starts to look like a list of points instead of a record of what students can do. Mastery becomes a percentage, not a description. |
+| **Rubric with standard** | Students who hit the rubric perfectly are reported as "proficient" even when the rubric never tested the standard. |
+| **Rubric with curriculum** | Every assignment gets a slightly different rubric, written in a hurry, with no through-line. Students cannot tell what good work looks like. |
+
+A useful rule of thumb: **if grades are not telling you whether students are hitting the standard, one of these three has slipped out of place.**
+
+## How they line up across a teacher's week
+
+The same three layers show up in a different role on every day of the week. The standard is the part you keep coming back to.
+
+<Steps>
+  <Step title="Monday — plan the unit">
+    Open the standards. Pick three to six the unit will *prioritize* (not just *touch*). Write each in your own words.
+  </Step>
+  <Step title="Tuesday — design the assignment">
+    Read the verb in the standard. Make sure the assignment asks students to do that verb, not a smaller one. (See [Align an assignment to standards](/standards/guides/align-an-assignment-to-standards).)
+  </Step>
+  <Step title="Wednesday — build the rubric">
+    Translate the standard's criteria into 3-5 levels of proficiency. Each row should map back to a phrase in the standard. (See [Turn a standard into a rubric](/standards/guides/turn-a-standard-into-a-rubric).)
+  </Step>
+  <Step title="Thursday — give feedback">
+    Use the standard's language in the comments. Students should be able to read the feedback and know what the standard asks of them. (See [Write feedback from a standard](/standards/guides/write-feedback-from-a-standard).)
+  </Step>
+  <Step title="Friday — record evidence">
+    Roll up evidence by **standard**, not just by assignment. A student's record should show what they can do, not just a column of scores. (See [Map student work to skills](/standards/guides/map-student-work-to-skills).)
+  </Step>
+</Steps>
+
+## A note on backward design
+
+The cleanest way to keep these three lined up is to plan in the reverse order most of us were taught. **Backward design**, the framework popularized by Grant Wiggins and Jay McTighe, asks teachers to start at the end and work back.
+
+```mermaid
+flowchart LR
+  A["<b>1. Identify the standard</b><br/>The destination."]
+  B["<b>2. Decide the evidence</b><br/>The rubric and final task."]
+  C["<b>3. Plan the route</b><br/>The curriculum and lessons."]
+  A --> B --> C
+  classDef step fill:#fdf6f0,stroke:#0E7553,color:#211f1d,rx:8,ry:8;
+  class A,B,C step
+```
+
+Most teachers were trained to design in the order **lessons → assignment → rubric → standard**, which is exactly the order that lets one of the three slip. Backward design forces you to write the rubric *from the standard*, and to plan the lessons *toward the rubric*. The chain stays connected.
+
+## Common misconceptions
+
+<AccordionGroup>
+  <Accordion title="“Common Core is a curriculum.”">
+    No. Common Core is a set of **standards**. It says what students should know and be able to do. It does not pick textbooks, units, or pacing. Two schools that both teach Common Core can use entirely different curricula and that is by design.
+  </Accordion>
+  <Accordion title="“If we change the rubric, we changed the standard.”">
+    No. Rubrics change all the time, and they should — every task is different. The standard above the rubric does not move. The rubric just tells you whether students hit the standard on this particular task.
+  </Accordion>
+  <Accordion title="“A standards-aligned curriculum guarantees standards-aligned grading.”">
+    Not on its own. A curriculum can be aligned to standards in name and still be graded on assignment compliance. The rubric is the place where the standard either shows up in the grade book or quietly disappears.
+  </Accordion>
+  <Accordion title="“Rubrics are just grading shortcuts.”">
+    A rubric does score work, but its main job is to make the standard concrete for students *before* they do the work. A rubric that lives only in the teacher's grade book is half a rubric.
+  </Accordion>
+  <Accordion title="“Different rubrics on the same standard means inconsistent grading.”">
+    Different rubrics for different *tasks* are normal and good. Different rubrics for the *same* task across classrooms is the inconsistency to worry about. The fix is a shared task and a shared rubric, not a single rubric for the whole standard.
+  </Accordion>
+  <Accordion title="“Once a unit is built, you don't touch the curriculum again.”">
+    The curriculum is the most flexible of the three. When student work shows the unit is not reaching the standard, change the unit. Do not change the standard, and do not stretch the rubric to fit the work students produced.
+  </Accordion>
+</AccordionGroup>
+
+## Frequently asked questions
+
+<AccordionGroup>
+  <Accordion title="Are learning objectives the same as standards?">
+    No. A standard is the year-end outcome. A learning objective (sometimes called a learning target or "I can" statement) is a slice of the standard you can teach in a single lesson or week. One standard usually breaks down into several objectives.
+  </Accordion>
+  <Accordion title="Where does pacing live — standards, curriculum, or rubric?">
+    Pacing is curriculum. The standard says what mastery looks like by the end of the year. The curriculum decides which weeks of the year are spent on which standard. Pacing is the most local of all curriculum decisions and the easiest to revise.
+  </Accordion>
+  <Accordion title="Where do state tests fit?">
+    State tests are assessments built to measure the standards. They are not standards themselves, and they are not your classroom rubric. A test blueprint is the closest cousin to a rubric — it tells you how the test maps to specific standards.
+  </Accordion>
+  <Accordion title="Is a learning progression a standard?">
+    A learning progression is a research-based map of how a skill grows from grade to grade. Standards are usually written from progressions, but the standard is the version a state adopts and your district has to teach.
+  </Accordion>
+  <Accordion title="What about “power standards” or “priority standards”?">
+    Those are local choices about which standards a school will spend the most time on. They are not separate standards. Think of them as the curriculum's prioritization decision, sitting one level below the standards themselves.
+  </Accordion>
+  <Accordion title="Can a rubric be used across multiple assignments?">
+    Yes, as long as the assignments ask students to do the same kind of work against the same standard. A general "writing rubric" used on a lab report and a personal narrative is almost always too loose to grade either one well. Tune the rubric to the task.
+  </Accordion>
+  <Accordion title="Where does feedback fit in this picture?">
+    Feedback lives between the rubric and the next assignment. The rubric is the language. The feedback uses that language to point a specific student toward the next move. Feedback that does not use the rubric's language is harder for students to act on. (See [Write feedback from a standard](/standards/guides/write-feedback-from-a-standard).)
+  </Accordion>
+</AccordionGroup>
+
+## Glossary
+
+| Term | What it really means |
+| --- | --- |
+| **Standard** | A publicly adopted statement of what students should know and be able to do by the end of a grade or course. |
+| **Anchor standard** | A K-12 outcome that grade-level standards build toward. |
+| **Curriculum** | The local plan of units, texts, tasks, and pacing that walks students from where they are to the standard. |
+| **Pacing guide** | A piece of curriculum that maps standards onto weeks of the school year. |
+| **Scope and sequence** | A higher-level view of which standards are taught in which order across a year or course. |
+| **Learning objective / learning target** | A weekly or daily "I can" statement. A slice of a standard. |
+| **Rubric** | A scoring tool that lists criteria and levels of proficiency for one task. |
+| **Single-point rubric** | A rubric with one column of "proficient" descriptors and space for "not yet" and "above and beyond" notes. |
+| **Analytic rubric** | A rubric with multiple traits scored separately. |
+| **Holistic rubric** | A rubric with one overall score and one descriptor per level. |
+| **Backward design** | A planning sequence that starts with the standard, then builds the assessment, then plans the lessons. |
+| **Alignment** | The degree to which the curriculum and rubric actually require students to do what the standard asks. |
+
+## Where to go next
+
+<CardGroup cols={2}>
+  <Card title="What are learning standards?" href="/standards/guides/what-are-learning-standards" icon="compass">
+    The full plain-English explainer on standards — who writes them, how to read the codes, and what they do not do.
+  </Card>
+  <Card title="Turn a standard into a rubric" href="/standards/guides/turn-a-standard-into-a-rubric" icon="ruler">
+    A step-by-step way to translate any standard into a 3-5 level rubric your team can grade with.
+  </Card>
+  <Card title="Align an assignment to standards" href="/standards/guides/align-an-assignment-to-standards" icon="link">
+    Take an existing assignment and map it to the standards it actually measures.
+  </Card>
+  <Card title="Write feedback from a standard" href="/standards/guides/write-feedback-from-a-standard" icon="message-square">
+    Use the standard's language in comments students can act on.
+  </Card>
+</CardGroup>
+
+<div class="citation">
+  <dl>
+    <dt>Primary sources</dt>
+    <dd>
+      U.S. Department of Education — <a href="https://www.ed.gov/laws-and-policy/laws-preschool-grade-12-education/every-student-succeeds-act-essa">Every Student Succeeds Act (ESSA, 2015)</a><br />
+      U.S. Department of Education — <a href="https://www.ed.gov/sites/ed/files/2023/11/Curriculum-Development-Toolkit.pdf">Curriculum Development Toolkit (2023)</a><br />
+      Wisconsin Department of Public Instruction — <a href="https://dpi.wi.gov/sites/default/files/imce/assessment/pdf/Link_between_Standards_Curriculum_and_Assessment.pdf">The Link Between Standards, Curriculum, and Assessment</a><br />
+      Washington Office of Superintendent of Public Instruction — <a href="https://ospi.k12.wa.us/sites/default/files/2024-03/standards_v_curriculum_final_ada.pdf">Standards vs. Curriculum</a><br />
+      Southern Regional Education Board — <a href="https://www.sreb.org/sites/main/files/file-attachments/2022standards_vs_curriculum_page1.pdf">Standards vs. Curriculum</a><br />
+      Common Core State Standards Initiative — <a href="https://www.thecorestandards.org/about-the-standards/">About the Standards</a>
+    </dd>
+    <dt>Frameworks referenced</dt>
+    <dd>
+      Wiggins, G., &amp; McTighe, J. (2005). <i>Understanding by Design</i> (Expanded 2nd ed.). ASCD.<br />
+      Brookhart, S. M. (2013). <i>How to Create and Use Rubrics for Formative Assessment and Grading</i>. ASCD.<br />
+      Popham, W. J. (2014). <i>Classroom Assessment: What Teachers Need to Know</i> (7th ed.). Pearson.<br />
+      Marzano, R. J., &amp; Kendall, J. S. (2007). <i>The New Taxonomy of Educational Objectives</i> (2nd ed.). Corwin.
+    </dd>
+    <dt>Last updated</dt>
+    <dd>2026-05-07</dd>
+  </dl>
 </div>
 
-## What this page will cover
-
-- TODO
-- TODO
-
 <div class="canonical-summary">
-TODO: 60–100 word extractable summary for LLM ingestion.
+Standards, curriculum, and rubrics are three different tools that often get used as if they were the same thing. A standard is the public, year-end goal a state board of education adopts. A curriculum is the local plan of units, texts, and pacing that walks students to that goal. A rubric is the criteria-and-levels measuring stick a teacher uses to score one piece of work against the standard. One standard supports many curricula. One curriculum is graded with many rubrics. The standard is the part that does not move. The other two are local choices, and most grading problems start when a school confuses which is which.
 </div>

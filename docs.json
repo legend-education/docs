@@ -44,7 +44,7 @@
     "timestamp": true
   },
   "contextual": {
-    "options": ["copy", "view", "chatgpt", "claude", "perplexity", "mcp", "cursor", "vscode"]
+    "options": ["copy", "chatgpt", "claude"]
   },
   "navigation": {
     "tabs": [
@@ -54,14 +54,8 @@
           {
             "group": "Guides",
             "pages": [
-              "standards/index",
               "standards/guides/what-are-learning-standards",
-              "standards/guides/standards-vs-curriculum-vs-rubrics",
-              "standards/guides/turn-a-standard-into-a-rubric",
-              "standards/guides/write-feedback-from-a-standard",
-              "standards/guides/align-an-assignment-to-standards",
-              "standards/guides/map-student-work-to-skills",
-              "standards/guides/differentiate-feedback-by-standard"
+              "standards/guides/standards-vs-curriculum-vs-rubrics"
             ]
           },
           {
@@ -271,14 +265,6 @@
             ]
           },
           {
-            "group": "Science (NGSS)",
-            "pages": [
-              "standards/ngss/index",
-              "standards/ngss/high-school-biology",
-              "standards/ngss/hs-ls1-1"
-            ]
-          },
-          {
             "group": "Frameworks",
             "pages": [
               "standards/c3-framework",
@@ -289,50 +275,31 @@
             ]
           },
           {
-            "group": "State standards",
+            "group": "Science (NGSS)",
+            "tag": "Coming soon",
             "pages": [
-              "standards/state-standards/index",
-              "standards/state-standards/new-york",
-              "standards/state-standards/california",
-              "standards/state-standards/texas",
-              "standards/state-standards/florida"
+              "standards/ngss/index"
+            ]
+          },
+          {
+            "group": "State standards",
+            "tag": "Coming soon",
+            "pages": [
+              "standards/state-standards/index"
             ]
           },
           {
             "group": "Assessments",
+            "tag": "Coming soon",
             "pages": [
-              "standards/assessments/index",
-              {
-                "group": "AP",
-                "pages": [
-                  "standards/assessments/ap/index",
-                  "standards/assessments/ap/english-language",
-                  "standards/assessments/ap/biology"
-                ]
-              },
-              {
-                "group": "SAT",
-                "pages": [
-                  "standards/assessments/sat/index",
-                  "standards/assessments/sat/reading-writing"
-                ]
-              },
-              {
-                "group": "ACT",
-                "pages": [
-                  "standards/assessments/act/index",
-                  "standards/assessments/act/writing-rubric"
-                ]
-              }
+              "standards/assessments/index"
             ]
           },
           {
             "group": "Reference",
+            "tag": "Coming soon",
             "pages": [
-              "standards/reference/skills-taxonomy",
-              "standards/reference/rubric-categories",
-              "standards/reference/grade-bands",
-              "standards/reference/framework-crosswalks"
+              "standards/reference/index"
             ]
           }
         ]
