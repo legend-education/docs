@@ -235,26 +235,6 @@ last_updated: "2026-05-11"
   </Card>
 </CardGroup>
 
-## How the standards are organized
-
-Common Core sits in two halves: ELA and Math. Each half has its own structure.
-
-## Subjects
-
-<CardGroup cols={2}>
-  <Card title="ELA" icon="book-open-text" href="/standards/common-core/ela">
-    Reading, Writing, Speaking and Listening, and Language.
-
-    Anchor standards plus grade-level standards from kindergarten through grade 12.
-  </Card>
-
-  <Card title="Mathematics" icon="calculator" href="/standards/common-core/math">
-    Eight Standards for Mathematical Practice that apply at every grade.
-
-    Plus grade-by-grade content standards.
-  </Card>
-</CardGroup>
-
 <script type="application/ld+json">
   {`
       {
@@ -283,9 +263,16 @@ Common Core sits in two halves: ELA and Math. Each half has its own structure.
 
 Common Core sits in two halves: ELA and Math. Each half has its own structureCommon Core sits in two halves: ELA and Math. Each half has its own structure.
 
-**ELA** has four strands: Reading, Writing, Speaking and Listening, and Language. Each strand opens with College and Career Readiness (CCR) anchor standards that describe the K-12 endpoint. Grade-level standards underneath each anchor spell out what that endpoint looks like at kindergarten, grade 1, grade 2, and on up. Grades 9-10 and 11-12 are written as two-year bands instead of single grades. A separate set of literacy standards covers reading and writing in history, social studies, science, and technical subjects for grades 6-12**ELA** has four strands: Reading, Writing, Speaking and Listening, and Language. Each strand opens with College and Career Readiness (CCR) anchor standards that describe the K-12 endpoint. Grade-level standards underneath each anchor spell out what that endpoint looks like at kindergarten, grade 1, grade 2, and on up. Grades 9-10 and 11-12 are written as two-year bands instead of single grades. A separate set of literacy standards covers reading and writing in history, social studies, science, and technical subjects for grades 6-12**ELA** has four strands: Reading, Writing, Speaking and Listening, and Language. Each strand opens with College and Career Readiness (CCR) anchor standards that describe the K-12 endpoint. Grade-level standards underneath each anchor spell out what that endpoint looks like at kindergarten, grade 1, grade 2, and on up. Grades 9-10 and 11-12 are written as two-year bands instead of single grades. A separate set of literacy standards covers reading and writing in history, social studies, science, and technical subjects for grades 6-12**ELA** has four strands: Reading, Writing, Speaking and Listening, and Language. Each strand opens with College and Career Readiness (CCR) anchor standards that describe the K-12 endpoint. Grade-level standards underneath each anchor spell out what that endpoint looks like at kindergarten, grade 1, grade 2, and on up. Grades 9-10 and 11-12 are written as two-year bands instead of single grades. A separate set of literacy standards covers reading and writing in history, social studies, science, and technical subjects for grades 6-12.
+**ELA** has four strands: 
 
-**Math** is built around eight Standards for Mathematical Practice (the "MP" standards) that apply at every grade. On top of that, each K-8 grade has its own content standards grouped into domains (for example, Number and Operations in Base Ten, or Geometry). Domains break into clusters, and clusters hold the individual standards. High school math is organized by conceptual category rather than by grade, so a single Algebra standard can show up in Algebra I, Algebra II, or an integrated course**Math** is built around eight Standards for Mathematical Practice (the "MP" standards) that apply at every grade. On top of that, each K-8 grade has its own content standards grouped into domains (for example, Number and Operations in Base Ten, or Geometry). Domains break into clusters, and clusters hold the individual standards. High school math is organized by conceptual category rather than by grade, so a single Algebra standard can show up in Algebra I, Algebra II, or an integrated course.
+- Reading
+- Writing
+- Speaking and Listening
+- Language
+
+Each strand opens with anchor standards that describe the K-12 end goal. Grade-level standards underneath each anchor spell out what that endpoint looks like at kindergarten, grade 1, grade 2, and so on. High School grades 9-10 and 11-12 are written as two-year bands.
+
+**Math** is built around eight Standards for Mathematical Practice. Each K-8 grade has its own content standards grouped into domains (for example, Number and Operations in Base Ten, or Geometry). High school math is organized by conceptual category rather than by grade, so a single Algebra standard can show up in Algebra I, Algebra II, or an integrated course**.**
 
 ## How to read a Common Core code
 
@@ -433,56 +420,6 @@ Read this as the first writing standard for grades 9-10. The standard asks stude
 </Steps>
 
 Common Core was written to fix a specific problem. A student moving from one state to another could land in a school where "grade-level math" meant something completely different. By 2008, the National Governors Association had documented that fewer than half of U.S. high school graduates were ready for college-level coursework. State standards varied widely in rigor, and college placement tests rarely lined up with K-12 exit standards. The 2009 initiative tried to anchor every state to one shared definition of what a student at each grade should be able to do.
-
-## How to read a Common Core code
-
-Every Common Core standard has a code. Once you can read the code, you can find any standard fast.
-
-### Math content
-
-```text
-CCSS.MATH.CONTENT.5.NF.B.3
-└──┬──┘ └─┬─┘ └─┬─┘ │ └┬┘ │ └┬┘
-   │     │     │   │  │  │  └── standard within cluster
-   │     │     │   │  │  └───── cluster letter
-   │     │     │   │  └──────── domain (NF = Number and Operations: Fractions)
-   │     │     │   └─────────── grade level (5)
-   │     │     └─────────────── content vs. practice
-   │     └───────────────────── subject
-   └─────────────────────────── framework
-```
-
-Read this as fifth grade, Number and Operations: Fractions, cluster B, standard 3. The standard says students interpret a fraction as the division of the numerator by the denominator.
-
-### Math practice
-
-The eight practice standards apply from kindergarten through grade 12.
-
-```text
-CCSS.MATH.PRACTICE.MP3
-                   └─┬─┘
-                     └── practice number (1-8)
-```
-
-MP3 is "Construct viable arguments and critique the reasoning of others." A kindergartner does it by explaining a counting strategy. A senior does it by writing a proof. The verb is the same.
-
-### ELA
-
-```text
-CCSS.ELA-LITERACY.W.9-10.1
-└──┬──┘ └────┬───┘ │ └─┬─┘ │
-   │         │     │   │   └── standard within strand
-   │         │     │   └────── grade band (9-10)
-   │         │     └────────── strand (W = Writing)
-   │         └──────────────── content area (literacy)
-   └────────────────────────── framework
-```
-
-Read this as the first writing standard for grades 9-10. The standard asks students to write arguments that support a claim with valid reasoning and strong evidence.
-
-<Tip>
-  Common Core math codes can also be written without the `CCSS.MATH.CONTENT` prefix. `5.NF.B.3` and `CCSS.MATH.CONTENT.5.NF.B.3` point to the same standard. The short form is what you will see on most teacher-built materials.
-</Tip>
 
 ## Common misreads
 
