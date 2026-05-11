@@ -219,42 +219,8 @@ toc-item[data-active-deepest] > a::before {
 }
 
 /* ------------------------------------------------------------
-   Pin the desktop search button into the navbar, right-aligned
-   to the navbar edge. Keeps the existing search button width —
-   it just moves up into the navbar. The Ask AI assistant entry
-   tucks in immediately to the left of the search bar with a
-   half-rem gap, so the two top-right controls read as a pair.
+   TEMP DEBUG: navbar pinning disabled to test click interception.
    ------------------------------------------------------------ */
-
-@media (min-width: 1024px) {
-  #search-bar-entry {
-    position: fixed !important;
-    top: 0.625rem; /* vertically centered in 3.5rem navbar with h-9 button */
-    right: 1.5rem; /* matches navbar right padding */
-    left: auto;
-    width: 14rem !important;
-    z-index: 50;   /* above #navbar (z-30) */
-  }
-
-  /* Ask AI button — pinned just to the left of the search bar.
-     The right offset is the search bar's right padding (1.5rem)
-     plus its width (14rem) plus a 0.5rem gap. Width is left to
-     the assistant entry's intrinsic size so the icon-or-pill
-     variants Mintlify ships both render correctly. */
-  #assistant-entry {
-    position: fixed !important;
-    top: 0.625rem;
-    right: calc(1.5rem + 14rem + 0.5rem);
-    left: auto;
-    z-index: 50;
-  }
-
-  /* Slide sidebar nav items up to fill the empty space the
-     search bar used to occupy at the top of the sidebar. */
-  #navigation-items {
-    top: 0.25rem !important;
-  }
-}
 
 a[nav-tabs-item] {
   -webkit-font-smoothing: antialiased;
@@ -333,7 +299,6 @@ a[nav-tabs-item] {
   margin: -1rem 0 1.75rem;
   font-size: 0.9375rem;
   line-height: 1.5;
-  text-align: right;
 }
 
 .official-source::before {
@@ -366,7 +331,6 @@ a[nav-tabs-item] {
   margin: -1.25rem 0 1.75rem;
   font-size: 0.9375rem;
   line-height: 1.5;
-  text-align: right;
 }
 
 .official-downloads::before {
