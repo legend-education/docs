@@ -333,6 +333,7 @@ a[nav-tabs-item] {
   margin: -1rem 0 1.75rem;
   font-size: 0.9375rem;
   line-height: 1.5;
+  text-align: right;
 }
 
 .official-source::before {
@@ -365,6 +366,7 @@ a[nav-tabs-item] {
   margin: -1.25rem 0 1.75rem;
   font-size: 0.9375rem;
   line-height: 1.5;
+  text-align: right;
 }
 
 .official-downloads::before {
