@@ -2,7 +2,7 @@
   "$schema": "https://mintlify.com/docs.json",
   "theme": "almond",
   "name": "Legend Standards",
-  "description": "Plain-English explanations, classroom examples, and citations for U.S. K-12 learning standards.",
+  "description": "Explanations, classroom examples, and citations for U.S. K-12 learning standards.",
   "colors": {
     "primary": "#12936B",
     "light": "#2AAF82",
@@ -47,17 +47,17 @@
     "options": ["copy", "chatgpt", "claude"]
   },
   "navigation": {
-    "tabs": [
+    "groups": [
       {
-        "tab": "Standards",
-        "groups": [
-          {
-            "group": "Guides",
-            "pages": [
-              "standards/guides/what-are-learning-standards",
-              "standards/guides/standards-vs-curriculum-vs-rubrics"
-            ]
-          },
+        "group": "Guides",
+        "pages": [
+          "standards/guides/what-are-learning-standards",
+          "standards/guides/standards-vs-curriculum-vs-rubrics"
+        ]
+      },
+      {
+        "group": "Standards",
+        "pages": [
           {
             "group": "Common Core",
             "pages": [
@@ -265,62 +265,57 @@
             ]
           },
           {
-            "group": "Frameworks",
-            "pages": [
-              "standards/c3-framework",
-              "standards/wida",
-              "standards/iste",
-              "standards/casel",
-              "standards/udl"
-            ]
-          },
-          {
-            "group": "Science (NGSS)",
+            "group": "NGSS",
             "tag": "Coming soon",
             "pages": [
               "standards/ngss/index"
             ]
           },
-          {
-            "group": "State standards",
-            "tag": "Coming soon",
-            "pages": [
-              "standards/state-standards/index"
-            ]
-          },
-          {
-            "group": "Assessments",
-            "tag": "Coming soon",
-            "pages": [
-              "standards/assessments/index"
-            ]
-          },
-          {
-            "group": "Reference",
-            "tag": "Coming soon",
-            "pages": [
-              "standards/reference/index"
-            ]
-          }
+          "standards/c3-framework",
+          "standards/wida",
+          "standards/iste",
+          "standards/casel",
+          "standards/udl"
+        ]
+      },
+      {
+        "group": "State standards",
+        "tag": "Coming soon",
+        "pages": [
+          "standards/state-standards/index"
+        ]
+      },
+      {
+        "group": "Competencies",
+        "tag": "Coming soon",
+        "pages": [
+          "standards/competencies/index",
+          "standards/competencies/portrait-of-a-graduate",
+          "standards/competencies/skills-for-the-future"
+        ]
+      },
+      {
+        "group": "Assessments",
+        "tag": "Coming soon",
+        "pages": [
+          "standards/assessments/index"
+        ]
+      },
+      {
+        "group": "Reference",
+        "tag": "Coming soon",
+        "pages": [
+          "standards/reference/index"
         ]
       }
     ]
   },
   "logo": {
     "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "dark": "/logo/dark.svg",
+    "href": "https://legend.org"
   },
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "legend.org",
-      "href": "https://legend.org"
-    }
-  },
-  "footer": {
-    "socials": {
-      "x": "https://x.com/legendeducation",
-      "linkedin": "https://linkedin.com/company/legendeducation"
-    }
+  "settings": {
+    "customScripts": ["/scripts.js"]
   }
 }

@@ -413,7 +413,7 @@ pages.push({
   rel: "standards/common-core/index.mdx",
   data: () => {
     const urlPath = "/standards/common-core";
-    const title = "Common Core State Standards (CCSS) — plain-English guide";
+    const title = "Common Core State Standards (CCSS) guide";
     return (
       fmFor({
         title,
@@ -556,7 +556,7 @@ for (const s of ELA_ANCHOR_STRANDS) {
         fmFor({
           title,
           sidebarTitle: s.label,
-          description: `All ${s.count} College and Career Readiness anchor standards for ${s.label.toLowerCase()}, with plain-English explanations and classroom examples for K-12 teachers.`,
+          description: `All ${s.count} College and Career Readiness anchor standards for ${s.label.toLowerCase()}, with explanations and classroom examples for K-12 teachers.`,
           keywords: [
             "Common Core",
             `${s.label} anchor standards`,
@@ -626,7 +626,7 @@ for (let i = 0; i < ELA_GRADE_LIST.length; i++) {
         fmFor({
           title,
           sidebarTitle: g.label,
-          description: `All Common Core ELA standards for ${g.label}: reading, writing, speaking & listening, and language. Plain-English explanations, classroom examples, and citations.`,
+          description: `All Common Core ELA standards for ${g.label}: reading, writing, speaking & listening, and language. Explanations, classroom examples, and citations.`,
           keywords: [
             "Common Core",
             `${g.label} ELA`,
@@ -667,7 +667,7 @@ for (const hub of ELA_LITERACY) {
           fmFor({
             title,
             sidebarTitle: b.label,
-            description: `Common Core ${hub.label} standards for ${b.label}, with plain-English explanations and classroom examples.`,
+            description: `Common Core ${hub.label} standards for ${b.label}, with explanations and classroom examples.`,
             keywords: ["Common Core", hub.label, `${b.label} literacy`],
             urlPath,
           }) +
@@ -795,7 +795,7 @@ for (let i = 0; i < MATH_PRACTICE.length; i++) {
         fmFor({
           title,
           sidebarTitle: `MP${mp.num}`,
-          description: `What MP${mp.num} (${mp.label.toLowerCase()}) means in plain English, with classroom examples and rubric language for K-12 teachers.`,
+          description: `What MP${mp.num} (${mp.label.toLowerCase()}) means, with classroom examples and rubric language for K-12 teachers.`,
           keywords: [`MP${mp.num}`, "Standards for Mathematical Practice", mp.label],
           urlPath,
         }) +
@@ -818,7 +818,7 @@ for (let i = 0; i < MATH_PRACTICE.length; i++) {
           url: `${SITE}${urlPath}`,
         }) +
         learningResource({ name: title, urlPath, level: "K-12" }) +
-        "## What it means\n\nTODO: plain-English explanation.\n\n" +
+        "## What it means\n\nTODO: explanation.\n\n" +
         "## Classroom application\n\nTODO: how teachers see MP" + mp.num + " in student work.\n\n" +
         "## Related pages\n\n" +
         (prev ? `- [Previous: MP${prev.num}](/standards/common-core/math/practice/${prev.slug})\n` : "") +
@@ -848,7 +848,7 @@ for (let gi = 0; gi < MATH_GRADES.length; gi++) {
         fmFor({
           title,
           sidebarTitle: g.label,
-          description: `All Common Core Math standards for ${g.label} across ${g.domains.length} domains, with plain-English explanations and classroom examples.`,
+          description: `All Common Core Math standards for ${g.label} across ${g.domains.length} domains, with explanations and classroom examples.`,
           keywords: ["Common Core math", `${g.label} math`, `Grade ${g.code} math`],
           urlPath,
         }) +
@@ -894,7 +894,7 @@ for (let gi = 0; gi < MATH_GRADES.length; gi++) {
           fmFor({
             title,
             sidebarTitle: d.label,
-            description: `Common Core ${d.label} standards for ${g.label}, with plain-English explanations and classroom examples for teachers.`,
+            description: `Common Core ${d.label} standards for ${g.label}, with explanations and classroom examples for teachers.`,
             keywords: ["Common Core math", `${g.label} ${d.label}`, d.label, `Grade ${g.code} math`],
             urlPath,
           }) +
@@ -979,7 +979,7 @@ for (const c of MATH_HS) {
         fmFor({
           title,
           sidebarTitle: c.label,
-          description: `Common Core high school ${c.label} standards with plain-English explanations, classroom examples, and citations.`,
+          description: `Common Core high school ${c.label} standards with explanations, classroom examples, and citations.`,
           keywords: ["Common Core", `high school ${c.label}`, c.label],
           urlPath,
         }) +

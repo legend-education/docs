@@ -1,13 +1,13 @@
 ---
 name: legend-brand-voice
-description: Write Legend marketing and product copy for teachers, school leaders, and educators in Legend's plainspoken, teacher-first brand voice. Use when drafting or editing any teacher-facing prose in this repo — homepage hero, subheaders, feature copy, MDX guides, FAQ answers, trust copy, admin benefit copy, or any sentence that could appear in front of a tired teacher.
+description: Write Legend marketing and product copy for teachers and school leaders in Legend's plainspoken, teacher-first brand voice. Use when drafting or editing any teacher-facing prose in this repo. Triggers include homepage hero, subheaders, feature copy, MDX guides, FAQ answers, trust copy, admin benefit copy, or any sentence that could appear in front of a tired teacher.
 ---
 
 # Skill: Legend Brand Writing for Teachers
 
 ## Purpose
 
-Write in Legend's brand voice when speaking to teachers, school leaders, and educators.
+Write in Legend's brand voice when speaking to teachers and school leaders.
 
 The goal is to sound like a smart, practical colleague who respects teachers' time and understands classroom reality.
 
@@ -29,6 +29,7 @@ Legend should not sound:
 - Cute
 - Buzzword-heavy
 - Like "AI magic"
+- Like ChatGPT wrote it
 
 ## Core Voice
 
@@ -36,7 +37,62 @@ Legend should not sound:
 
 Legend speaks to teachers the way a strong instructional leader or trusted colleague would:
 
-> We understand the work. We built something practical. You stay in control. Here's how it helps.
+> We understand the work. We built something practical that keeps you in control. Here's how it helps.
+
+## LLM Tells to Avoid
+
+These patterns scream "machine wrote this." Hard ban, no exceptions.
+
+### Em dashes and en dashes
+
+Do not use `—` or `–`. Replace with a period, comma, parenthesis, or colon.
+
+Bad:
+> Legend gives teachers a faster way to grade — without losing control.
+
+Good:
+> Legend gives teachers a faster way to grade. Teachers stay in control.
+
+### Three-part rhythmic structures
+
+No prose triads (three short parallel sentences in a row). No adjective triads (three modifiers strung together with "and" or "or"). When you catch one, delete the third item or merge two of them into one phrase.
+
+Bad:
+> Faster feedback. Clearer rubrics. Less grading drag.
+
+Good:
+> Faster feedback. Clearer rubrics.
+
+Bad:
+> clear, concise, and useful feedback
+
+Good:
+> clear, useful feedback
+
+### Stock LLM phrasings
+
+Cut these on sight:
+
+- "It's not just X, it's Y."
+- "Not only X but also Y."
+- "Whether you're X or Y..."
+- "Imagine..." or "Picture this..." as an opener.
+- "In today's fast-paced / ever-evolving / increasingly complex world."
+- "It's worth noting that..."
+- "It's important to remember..."
+- "At its core..."
+- "Let's dive into..."
+
+### Stock LLM vocabulary
+
+Replace on sight: delve, tapestry, navigate (the landscape), unleash, elevate, robust, seamless, comprehensive, vibrant, bustling, leverage, supercharge, transform, empower, foster, fuel, unlock potential.
+
+### Punctuation and formatting
+
+- Use straight quotes (`"` and `'`), never smart quotes (`" " ' '`).
+- Do not bold full sentences for emphasis. Bold UI elements only (e.g. Click **Settings**).
+- One exclamation point per page is one too many.
+- Avoid the "X: Y" subtitle pattern in headlines unless the colon is doing real work.
 
 ## Writing Principles
 
@@ -52,13 +108,13 @@ Good:
 
 ### 2. Respect the teacher's expertise
 
-Never imply the AI is replacing the teacher, judging the teacher, or knows better than the teacher.
+Never imply the AI is replacing the teacher or knows better than the teacher.
 
 Bad:
 > Legend grades your students for you.
 
 Good:
-> Legend drafts feedback teachers can review, edit, and send.
+> Legend drafts feedback teachers can review and send.
 
 ### 3. Lead with the real classroom pain
 
@@ -78,7 +134,7 @@ Bad:
 > Improve student growth with actionable insights.
 
 Good:
-> See which students need more help with evidence, organization, or thesis development.
+> See which students need more help with evidence or thesis development.
 
 ### 5. Keep teachers in control
 
@@ -116,19 +172,83 @@ Bad:
 > Finally! The revolutionary AI tool teachers have been waiting for!
 
 Good:
-> Faster feedback. Clearer rubrics. Less grading drag.
+> Faster feedback that's still aligned to your rubric.
+
+## Cadence and Texture
+
+This is the cadence Legend borrows from how Mike writes. Use these moves on purpose.
+
+### Open with the truth, not the windup
+
+State the fact or the problem in the first sentence. Skip the throat-clearing.
+
+Bad:
+> In today's evolving educational landscape, teachers face many challenges...
+
+Good:
+> Teachers spend more than ten hours a week grading.
+
+### Use real numbers and concrete artifacts
+
+Numbers and named nouns make a sentence stick. Trade adjectives for evidence.
+
+Bad:
+> Significant time savings on grading.
+
+Good:
+> Cut feedback writing from four hours to forty minutes per assignment.
+
+### Use sentence fragments sparingly
+
+Fragments are a tool for weight. One per paragraph at most. If every paragraph has one, the trick stops working.
+
+Good:
+> The judgment stays with you. That's the line we don't cross.
+
+### Contrast in pairs
+
+State what something is, then what it isn't. Pairs, not triads.
+
+Bad:
+> Faster. Clearer. Better.
+
+Good:
+> Faster, without losing what made the feedback yours.
+
+### Plain analogies, used sparingly
+
+Reach for an analogy only when it makes an abstract idea concrete. Don't string analogies together.
+
+Good:
+> A skill map works the way a fitness app does. You see what each student has practiced and where they're plateauing.
+
+### Gold-standard passages
+
+Reverse-engineer the cadence from these.
+
+**Homepage-style:**
+
+> Teachers spend more than ten hours a week grading. Most of that time goes to writing the same comments over and over. Legend changes that. Upload an assignment, and Legend drafts feedback for each student. You edit what you want and send what you trust. The judgment stays with you.
+
+**Feature-page style:**
+
+> Most rubrics get filed away the second they're handed out. Students don't read them. Teachers stop trusting them. Legend pulls the rubric back into the center of grading. Every comment ties to a specific criterion in your rubric, with the line of student work that earned it. You see exactly where each student met the bar and where they didn't.
+
+**Admin-page style:**
+
+> Schools have run on letter grades for a hundred years. The grade tells you the result. It doesn't tell you what the student actually knows or what to do about it. Legend gives administrators a clearer view. Across classrooms and assignments, you can see which standards students are mastering and which ones still need work. The data comes from real student work that teachers reviewed.
 
 ## Style References
 
 Blend these influences:
 
-- **E.B. White**: warmth, simplicity, human tone
-- **George Orwell**: clarity, directness, no jargon
+- **E.B. White**: warmth and simplicity
+- **George Orwell**: clarity and directness
 - **David Ogilvy**: benefit-driven copy
-- **John McPhee**: structured explanation
-- **Rachel Carson**: complex ideas made accessible
-- **Atul Gawande**: professional, humane, trustworthy
-- **Basecamp / 37signals**: practical, opinionated, plainspoken
+- **Atul Gawande**: professional and humane
+- **Basecamp / 37signals**: practical and plainspoken
+- **Paul Graham (essays)**: declarative, confident, willing to argue a point
+- **Stripe Press**: tight prose about complex ideas
 
 The target is:
 
@@ -197,15 +317,15 @@ Legend helps teachers turn student work into useful feedback and evidence of gro
 
 Core message:
 
-> Legend helps teachers give faster, clearer, rubric-aligned feedback without losing control of the work.
+> Legend helps teachers give clear, rubric-aligned feedback without losing control of the work.
 
 Alternate versions:
 
 > Legend helps teachers turn student work into feedback students can actually use.
 
-> Legend helps teachers grade faster while keeping feedback specific, thoughtful, and aligned to the rubric.
+> Legend helps teachers grade faster while keeping feedback specific and aligned to the rubric.
 
-> Legend gives teachers a faster way to review student work, spot patterns, and help students improve.
+> Legend gives teachers a faster way to review student work and help students improve.
 
 ## Copy Examples
 
@@ -218,7 +338,7 @@ Good:
 > Clear, rubric-aligned feedback in minutes.
 
 Better:
-> Grade faster. Give better feedback. Stay in control.
+> Grade faster. Give feedback students will actually use.
 
 ### Subheadline
 
@@ -226,7 +346,7 @@ Bad:
 > Legend leverages advanced AI to optimize grading workflows and improve student learning outcomes.
 
 Good:
-> Upload student work, choose your rubric, and review feedback your students can actually use.
+> Upload student work and review rubric-aligned feedback your students can actually use.
 
 ### Feature Copy
 
@@ -234,7 +354,7 @@ Bad:
 > Our platform enables scalable feedback generation across diverse learning environments.
 
 Good:
-> Turn essays, short responses, and handwritten work into editable feedback aligned to your rubric.
+> Turn essays and handwritten work into editable feedback aligned to your rubric.
 
 ### Trust Copy
 
@@ -242,7 +362,7 @@ Bad:
 > AI handles the grading process end to end.
 
 Good:
-> Legend drafts the feedback. Teachers review, edit, and decide what students receive.
+> Legend drafts the feedback. Teachers review and decide what students receive.
 
 ### Product Flow Copy
 
@@ -261,7 +381,7 @@ Good:
 ### Admin Benefit Copy
 
 Good:
-> See where students are growing across assignments, rubrics, and classrooms.
+> See where students are growing across assignments and classrooms.
 
 ## Tone Rules
 
@@ -274,7 +394,7 @@ Example:
 
 ### When writing to school leaders
 
-Be clear, credible, and outcomes-aware.
+Be clear and outcomes-aware.
 
 Example:
 > Legend gives schools a clearer view of student writing growth without adding another test.
@@ -329,7 +449,7 @@ Write:
 
 Use this as the baseline style:
 
-> Legend helps teachers turn student work into clear, rubric-aligned feedback. Upload an assignment, add the rubric, and review editable comments for each student. Teachers stay in control, while Legend handles the repetitive parts of grading.
+> Legend helps teachers turn student work into clear, rubric-aligned feedback. Upload an assignment, and Legend drafts editable comments for each student. Teachers stay in control, while Legend handles the repetitive parts of grading.
 
 ## Final Test
 
@@ -340,6 +460,8 @@ Before publishing, ask:
 3. Is the benefit concrete?
 4. Could this sentence appear on any generic edtech website? If yes, rewrite it.
 5. Did we remove the jargon?
+6. Did we strip every em dash and en dash?
+7. Did we break every three-part rhythm?
 
 ## Workflow
 
@@ -347,8 +469,11 @@ Before handing back any teacher-facing draft, run this check:
 
 1. Read every sentence aloud. If you stumble, shorten it.
 2. Run the Final Test above on the full draft. Rewrite anything that fails.
-3. Scan for the "Avoid" vocabulary list. Replace each hit.
-4. Confirm teachers stay in control of grading judgments in every claim.
-5. Confirm the benefit is concrete, not abstract.
+3. Search the draft for `—` and `–`. Remove every instance and rework the sentence with a period, comma, parenthesis, or colon.
+4. Scan for triads. Three short parallel sentences in a row, or three modifiers joined by "and" or "or." The fix is usually to delete the third item or to merge two of them into one phrase.
+5. Scan the "LLM Tells to Avoid" stock-phrase and stock-vocabulary lists. Replace each hit.
+6. Scan the "Avoid" list under "Sentence Style" and "Preferred Vocabulary." Replace each hit.
+7. Confirm teachers stay in control of grading judgments in every claim.
+8. Confirm the benefit is concrete, not abstract.
 
-Do **not** invoke the `humanize-text` skill from inside this workflow. The two skills are independent. If the user wants humanized output, they will ask for it explicitly, and a brand-voice editing pass should follow that humanizer pass — not precede it.
+Do **not** invoke the `humanize-text` skill from inside this workflow. The two skills are independent. If the user wants humanized output, they will ask for it explicitly, and a brand-voice editing pass should follow that humanizer pass, not precede it.

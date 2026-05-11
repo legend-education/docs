@@ -23,12 +23,32 @@
   --legend-rule: rgba(33, 31, 29, 0.12);
   --legend-rule-strong: rgba(33, 31, 29, 0.24);
 
+  /* Alpha border family, modeled on mono's --color-border-faint/-muted/-default/-loud.
+     Hairline alphas float over surfaces so contrast survives in both light and dark. */
+  --legend-border-faint: rgba(33, 31, 29, 0.04);
+  --legend-border-muted: rgba(33, 31, 29, 0.08);
+  --legend-border-default: rgba(33, 31, 29, 0.12);
+  --legend-border-loud: rgba(33, 31, 29, 0.16);
+
+  /* Surface alphas, same idea as --color-surface-base/-faint/-muted/-loud. */
+  --legend-surface-faint: rgba(33, 31, 29, 0.02);
+  --legend-surface-muted: rgba(33, 31, 29, 0.04);
+  --legend-surface-loud: rgba(33, 31, 29, 0.06);
+
   --legend-prose-width: 44rem;
   --legend-radius-sm: 0.5rem;
-  --legend-radius-md: 0.75rem;
-  --legend-radius-lg: 1rem;
-  --legend-shadow-card: 0 1px 2px rgba(33, 31, 29, 0.06),
-    0 8px 24px rgba(33, 31, 29, 0.06);
+  --legend-radius-md: 0.9rem;
+  --legend-radius-lg: 1.125rem;
+
+  /* Three-stop shadow with inset highlight, ported from mono's --shadow-dropdown-default. */
+  --legend-shadow-card:
+    0 0.5px 0.5px 0 rgba(255, 246, 240, 0.06) inset,
+    0 1px 2px 0 rgba(33, 31, 29, 0.04),
+    0 12px 24px -8px rgba(33, 31, 29, 0.08);
+  --legend-shadow-card-hover:
+    0 0.5px 0.5px 0 rgba(255, 246, 240, 0.10) inset,
+    0 8px 12px 0 rgba(33, 31, 29, 0.04),
+    0 24px 32px -12px rgba(33, 31, 29, 0.12);
 
   --legend-mono: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas,
     "Liberation Mono", monospace;
@@ -42,11 +62,39 @@
   --legend-rule: rgba(244, 237, 232, 0.12);
   --legend-rule-strong: rgba(244, 237, 232, 0.24);
   --legend-primary-soft: rgba(42, 175, 130, 0.12);
+
+  --legend-border-faint: rgba(244, 237, 232, 0.04);
+  --legend-border-muted: rgba(244, 237, 232, 0.08);
+  --legend-border-default: rgba(244, 237, 232, 0.14);
+  --legend-border-loud: rgba(244, 237, 232, 0.18);
+
+  --legend-surface-faint: rgba(244, 237, 232, 0.02);
+  --legend-surface-muted: rgba(244, 237, 232, 0.04);
+  --legend-surface-loud: rgba(244, 237, 232, 0.06);
+
+  --legend-shadow-card:
+    0 0.5px 0.5px 0 rgba(255, 246, 240, 0.04) inset,
+    0 1px 2px 0 rgba(0, 0, 0, 0.20),
+    0 12px 24px -8px rgba(0, 0, 0, 0.32);
+  --legend-shadow-card-hover:
+    0 0.5px 0.5px 0 rgba(255, 246, 240, 0.06) inset,
+    0 8px 12px 0 rgba(0, 0, 0, 0.20),
+    0 24px 32px -12px rgba(0, 0, 0, 0.40);
 }
 
 /* ------------------------------------------------------------
    Baseline editorial polish
    ------------------------------------------------------------ */
+
+*::selection {
+  background-color: color-mix(in srgb, var(--legend-warm-800) 12%, transparent);
+  color: var(--legend-warm-800);
+}
+
+.dark *::selection {
+  background-color: color-mix(in srgb, var(--legend-cream-50) 14%, transparent);
+  color: var(--legend-cream-50);
+}
 
 main h1,
 main h2,
@@ -64,9 +112,14 @@ main h1 {
 }
 
 main h2 {
-  font-size: 1.625rem;
-  line-height: 1.2;
+  font-size: 1.75rem;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
   margin-top: 2.5rem;
+}
+
+main h3 {
+  letter-spacing: -0.012em;
 }
 
 main p,
@@ -107,34 +160,32 @@ toc-item[data-active-deepest] > a::before {
 }
 
 /* ------------------------------------------------------------
-   Topbar logo — render smaller than its natural width
+   Topbar logo — render smaller than its natural width.
+   Uses :has() to target the logo anchor regardless of href, so
+   the Legend logo can link off-site to legend.org while the
+   "Standards" wordmark next to it still routes to docs root.
    ------------------------------------------------------------ */
 
-#navbar a[href="/"] img,
-#navbar a[href="/"] svg,
-#sidebar a[href="/"] img,
-#sidebar a[href="/"] svg {
+#navbar a:has(> img) > img,
+#navbar a:has(> svg) > svg,
+#sidebar a:has(> img) > img,
+#sidebar a:has(> svg) > svg {
   max-width: 14rem;
   height: auto;
 }
 
 /* ------------------------------------------------------------
-   Topbar product label — divider + "Standards" wordmark to the
-   right of the Legend logo. lg breakpoint matches Mintlify's
-   own responsive pattern so it cleanly hides on mobile.
+   Topbar product label — divider + "Standards" wordmark sitting
+   next to the Legend logo. Injected as a real <a href="/"> by
+   scripts.js so the logo can link to legend.org while this
+   wordmark links back to the standards home.
    ------------------------------------------------------------ */
 
-#navbar a[href="/"] {
-  display: inline-flex;
-  align-items: center;
-}
-
-#navbar a[href="/"]::after {
-  content: "Standards";
+.legend-standards-link {
   display: inline-flex;
   align-items: center;
   height: 1.5rem;
-  margin-left: 1rem;
+  margin-left: 0.75rem;
   padding-left: 1rem;
   border-left: 1px solid rgba(33, 31, 29, 0.28);
   font-family: var(--legend-mono);
@@ -145,30 +196,40 @@ toc-item[data-active-deepest] > a::before {
   color: #211f1d;
   line-height: 1;
   white-space: nowrap;
+  text-decoration: none;
 }
 
-.dark #navbar a[href="/"]::after {
+.legend-standards-link:hover {
+  color: var(--legend-primary-strong);
+}
+
+.dark .legend-standards-link {
   color: #efeeed;
   border-left-color: rgba(244, 237, 232, 0.28);
 }
 
+.dark .legend-standards-link:hover {
+  color: var(--legend-primary-light);
+}
+
 @media (max-width: 480px) {
-  #navbar a[href="/"]::after {
+  .legend-standards-link {
     display: none;
   }
 }
 
 /* ------------------------------------------------------------
-   Pin the desktop search button into the navbar, aligned with
-   the left edge of the main content card. Keeps the existing
-   search button width — it just moves up into the navbar.
+   Pin the desktop search button into the navbar, right-aligned
+   to the navbar edge. Keeps the existing search button width —
+   it just moves up into the navbar.
    ------------------------------------------------------------ */
 
 @media (min-width: 1024px) {
   #search-bar-entry {
     position: fixed !important;
     top: 0.625rem; /* vertically centered in 3.5rem navbar with h-9 button */
-    left: 17rem;   /* almond layout px-2 (0.5rem) + sidebar w-[16.5rem] */
+    right: 1.5rem; /* matches navbar right padding */
+    left: auto;
     width: 14rem !important;
     z-index: 50;   /* above #navbar (z-30) */
   }
@@ -214,9 +275,11 @@ a[nav-tabs-item] {
   margin: 1.5rem 0 2rem;
   padding: 1.25rem 1.5rem 1.25rem 1.75rem;
   background: var(--legend-cream-100);
-  border: 1px solid var(--legend-rule);
+  border: 1px solid var(--legend-border-default);
   border-left: 3px solid var(--legend-primary);
   border-radius: var(--legend-radius-md);
+  corner-shape: superellipse(1.2);
+  box-shadow: var(--legend-shadow-card);
 }
 
 .answer-box::before {
@@ -255,8 +318,10 @@ a[nav-tabs-item] {
   margin: 2.5rem 0 1.5rem;
   padding: 1.25rem 1.5rem;
   background: var(--legend-cream-50);
-  border: 1px solid var(--legend-rule);
+  border: 1px solid var(--legend-border-default);
   border-radius: var(--legend-radius-md);
+  corner-shape: superellipse(1.2);
+  box-shadow: var(--legend-shadow-card);
   font-size: 0.9375rem;
 }
 
@@ -316,9 +381,11 @@ a[nav-tabs-item] {
   border-collapse: separate;
   border-spacing: 0;
   font-size: 0.9375rem;
-  border: 1px solid var(--legend-rule);
+  border: 1px solid var(--legend-border-default);
   border-radius: var(--legend-radius-md);
+  corner-shape: superellipse(1.2);
   overflow: hidden;
+  box-shadow: var(--legend-shadow-card);
 }
 
 .standards-table thead th {
@@ -378,13 +445,13 @@ a[nav-tabs-item] {
 .canonical-summary {
   margin: 3rem 0 1.5rem;
   padding: 1.25rem 1.5rem;
-  border-top: 1px solid var(--legend-rule);
-  border-bottom: 1px solid var(--legend-rule);
+  border-top: 1px solid var(--legend-border-muted);
+  border-bottom: 1px solid var(--legend-border-muted);
   background: transparent;
 }
 
 .canonical-summary::before {
-  content: "Canonical summary";
+  content: "Summary";
   display: block;
   font-family: var(--legend-mono);
   font-size: 0.6875rem;
@@ -412,6 +479,606 @@ a[nav-tabs-item] {
 
 .canonical-summary p + p {
   margin-top: 0.5rem;
+}
+
+/* ============================================================
+   PRIMITIVE 5 — Framework accent system
+   Each framework gets one Legend accent color, applied to a
+   page wrapper via Mintlify's `cssClasses` frontmatter:
+
+     cssClasses: ["framework-ccss-math"]
+
+   The wrapper sets three locally-scoped tokens (--legend-accent-fill,
+   --legend-accent-soft, --legend-accent-text) that .answer-box and
+   .standards-table consume. Pages with no framework class fall back
+   to --legend-primary, so the existing pages keep working.
+   ============================================================ */
+
+.framework-ccss-ela {
+  --legend-accent-fill: #2188b3;
+  --legend-accent-soft: rgba(33, 136, 179, 0.10);
+  --legend-accent-text: #34a2d3;
+  --legend-accent-text-loud: #35aadd;
+}
+
+.framework-ccss-math {
+  --legend-accent-fill: #8659c0;
+  --legend-accent-soft: rgba(134, 89, 192, 0.10);
+  --legend-accent-text: #a97ce7;
+  --legend-accent-text-loud: #af82ee;
+}
+
+.framework-ngss {
+  --legend-accent-fill: #7f9e4d;
+  --legend-accent-soft: rgba(127, 158, 77, 0.10);
+  --legend-accent-text: #86a553;
+  --legend-accent-text-loud: #95b563;
+}
+
+.framework-wida {
+  --legend-accent-fill: #4b9d95;
+  --legend-accent-soft: rgba(75, 157, 149, 0.10);
+  --legend-accent-text: #19afa4;
+  --legend-accent-text-loud: #35bfb4;
+}
+
+.framework-iste {
+  --legend-accent-fill: #4a7cc5;
+  --legend-accent-soft: rgba(74, 124, 197, 0.10);
+  --legend-accent-text: #5596f6;
+  --legend-accent-text-loud: #67a4fc;
+}
+
+.framework-casel {
+  --legend-accent-fill: #b6557d;
+  --legend-accent-soft: rgba(182, 85, 125, 0.10);
+  --legend-accent-text: #e0689a;
+  --legend-accent-text-loud: #ee74a6;
+}
+
+.framework-udl {
+  --legend-accent-fill: #ba773f;
+  --legend-accent-soft: rgba(186, 119, 63, 0.10);
+  --legend-accent-text: #d1813b;
+  --legend-accent-text-loud: #dc8e4d;
+}
+
+.framework-c3 {
+  --legend-accent-fill: #c39643;
+  --legend-accent-soft: rgba(195, 150, 67, 0.10);
+  --legend-accent-text: #c08f2d;
+  --legend-accent-text-loud: #d29e38;
+}
+
+/* Wire the editorial primitives to the accent tokens with a
+   primary-green fallback, so legacy pages stay green. */
+.answer-box {
+  border-left-color: var(--legend-accent-fill, var(--legend-primary));
+}
+
+.answer-box::before {
+  color: var(--legend-accent-fill, var(--legend-primary-strong));
+}
+
+.dark .answer-box::before {
+  color: var(--legend-accent-text-loud, var(--legend-primary-light));
+}
+
+.standards-table tbody tr:hover {
+  background: var(--legend-accent-soft, var(--legend-primary-soft));
+}
+
+.standards-table td:first-child,
+.standards-table th:first-child {
+  color: var(--legend-accent-fill, var(--legend-primary-strong));
+}
+
+.dark .standards-table td:first-child {
+  color: var(--legend-accent-text-loud, var(--legend-primary-light));
+}
+
+/* ============================================================
+   PRIMITIVE 6 — Pill / chip
+   Compact uppercase mono badge. Mirrors the v2 hero chip
+   ("AI assisted. Teacher approved.") right down to the inset
+   highlight. Useful for "Updated" stamps, framework labels,
+   and the homepage eyebrow.
+   ============================================================ */
+
+.legend-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 999px;
+  corner-shape: superellipse(1.2);
+  font-family: var(--legend-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  background: var(--legend-cream-100);
+  color: var(--legend-warm-700);
+  box-shadow:
+    inset 0 0 0 1px var(--legend-border-default),
+    inset 0 1.5px 2px 0 rgba(255, 246, 240, 0.5);
+}
+
+.dark .legend-pill {
+  color: var(--legend-cream-300);
+  box-shadow:
+    inset 0 0 0 1px var(--legend-border-default),
+    inset 0 1.5px 2px 0 rgba(255, 246, 240, 0.04);
+}
+
+.legend-pill--accent {
+  color: var(--legend-accent-fill, var(--legend-primary));
+  background: var(--legend-accent-soft, var(--legend-primary-soft));
+}
+
+.dark .legend-pill--accent {
+  color: var(--legend-accent-text-loud, var(--legend-primary-light));
+}
+
+/* Tag pills emitted by Mintlify's sidebar (e.g. the "Coming soon"
+   labels in docs.json). Mintlify wraps them in a span with the
+   tag text in `aria-label` or text content; this attribute selector
+   is conservative and degrades gracefully. */
+[data-tag],
+.nav-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.0625rem 0.5rem;
+  border-radius: 999px;
+  corner-shape: superellipse(1.2);
+  font-family: var(--legend-mono);
+  font-size: 0.625rem;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  background: var(--legend-surface-loud);
+  color: var(--legend-warm-700);
+  box-shadow: inset 0 0 0 1px var(--legend-border-muted);
+}
+
+.dark [data-tag],
+.dark .nav-tag {
+  color: var(--legend-cream-300);
+}
+
+/* ============================================================
+   PRIMITIVE 7 — Accordion (Mintlify <Accordion>)
+   Match the v2 marketing FAQ pill: rounded-18, hairline alpha
+   border, text-loud question / text-muted answer, gentle hover.
+   Selectors target the data attributes Mintlify exposes plus a
+   permissive `details`/`summary` fallback so this works whether
+   the runtime ships HTML <details> or a custom React widget.
+   ============================================================ */
+
+[data-accordion],
+[data-component="accordion"],
+details[data-accordion-item],
+.accordion-item,
+details.accordion {
+  position: relative;
+  margin: 0.75rem 0;
+  border-radius: var(--legend-radius-lg);
+  corner-shape: superellipse(1.2);
+  background: var(--legend-cream-50);
+  border: 1px solid var(--legend-border-default);
+  box-shadow: var(--legend-shadow-card);
+  overflow: clip;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+[data-accordion]:hover,
+[data-component="accordion"]:hover,
+details[data-accordion-item]:hover,
+.accordion-item:hover,
+details.accordion:hover {
+  border-color: var(--legend-border-loud);
+  box-shadow: var(--legend-shadow-card-hover);
+}
+
+[data-accordion] > button,
+[data-component="accordion"] > button,
+details[data-accordion-item] > summary,
+.accordion-item > button,
+.accordion-item > summary,
+details.accordion > summary {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--legend-warm-800);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  list-style: none;
+}
+
+.dark [data-accordion] > button,
+.dark [data-component="accordion"] > button,
+.dark details[data-accordion-item] > summary,
+.dark .accordion-item > button,
+.dark .accordion-item > summary,
+.dark details.accordion > summary {
+  color: var(--legend-cream-200);
+}
+
+details.accordion > summary::-webkit-details-marker,
+details[data-accordion-item] > summary::-webkit-details-marker {
+  display: none;
+}
+
+[data-accordion] [data-accordion-content],
+[data-component="accordion"] [data-accordion-content],
+.accordion-item > div:last-child,
+details.accordion > *:not(summary) {
+  padding: 0 1.25rem 1rem;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--legend-warm-700);
+}
+
+.dark [data-accordion] [data-accordion-content],
+.dark [data-component="accordion"] [data-accordion-content],
+.dark .accordion-item > div:last-child,
+.dark details.accordion > *:not(summary) {
+  color: var(--legend-cream-300);
+}
+
+/* AccordionGroup spacing — keep items tight together. */
+[data-accordion-group],
+.accordion-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin: 1.25rem 0;
+}
+
+/* ============================================================
+   PRIMITIVE 8 — Card / CardGroup (Mintlify <Card>)
+   Hairline alpha border, 18px squircle, layered shadow on hover,
+   primary-green icon tint. Targets Mintlify's data attributes
+   plus the common `.card` class as a fallback.
+   ============================================================ */
+
+[data-card],
+.card,
+a.card,
+.cards > a {
+  position: relative;
+  border-radius: var(--legend-radius-lg) !important;
+  corner-shape: superellipse(1.2);
+  border: 1px solid var(--legend-border-default) !important;
+  background: var(--legend-cream-50);
+  box-shadow: var(--legend-shadow-card);
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    transform 0.2s ease;
+}
+
+[data-card]:hover,
+.card:hover,
+a.card:hover,
+.cards > a:hover {
+  border-color: var(--legend-border-loud) !important;
+  box-shadow: var(--legend-shadow-card-hover);
+  transform: translateY(-1px);
+}
+
+[data-card] [data-card-icon],
+[data-card] svg:first-of-type,
+.card svg:first-of-type {
+  color: var(--legend-accent-fill, var(--legend-primary)) !important;
+}
+
+.dark [data-card] [data-card-icon],
+.dark [data-card] svg:first-of-type,
+.dark .card svg:first-of-type {
+  color: var(--legend-accent-text-loud, var(--legend-primary-light)) !important;
+}
+
+/* ============================================================
+   PRIMITIVE 9 — Highlighter motif
+   The Legend hero wraps a keyword in an inline highlighter PNG.
+   This is the SVG-free version: a CSS gradient stripe sits behind
+   the word, painted in the same warm yellow used elsewhere in the
+   accent system. Stays inside the line box so wraps cleanly.
+   ============================================================ */
+
+.legend-highlight {
+  background-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 58%,
+    rgba(195, 150, 67, 0.42) 58%,
+    rgba(195, 150, 67, 0.42) 88%,
+    transparent 88%,
+    transparent 100%
+  );
+  padding: 0 0.15em;
+}
+
+.dark .legend-highlight {
+  background-image: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 58%,
+    rgba(210, 158, 56, 0.32) 58%,
+    rgba(210, 158, 56, 0.32) 88%,
+    transparent 88%,
+    transparent 100%
+  );
+}
+
+/* ============================================================
+   PRIMITIVE 10 — Standards homepage hero
+   Used by /index.mdx. Eyebrow pill, big serif H1 with the
+   highlighter motif, 18px Inter subhead, two CTA cards.
+   ============================================================ */
+
+.legend-hero {
+  position: relative;
+  margin: 1rem 0 3rem;
+  padding: 1rem 0 0;
+  text-align: center;
+}
+
+.legend-hero .legend-pill {
+  margin-bottom: 1.25rem;
+}
+
+.legend-hero h1 {
+  font-size: clamp(2.25rem, 1.5rem + 2.4vw, 3.25rem);
+  line-height: 1.08;
+  letter-spacing: -0.022em;
+  font-weight: 500;
+  margin: 0 0 1rem;
+  max-width: 22ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.legend-hero p {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  color: var(--legend-warm-700);
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+.dark .legend-hero p {
+  color: var(--legend-cream-300);
+}
+
+/* ============================================================
+   PRIMITIVE 11 — State standards table
+   The 56-row jurisdiction-by-subject grid on the homepage.
+   Modeled on .standards-table but with five evenly-weighted
+   columns, a flag icon in the row header, normal-weight text
+   (no mono accent on first column), and a horizontal-scroll
+   wrapper for narrow viewports.
+   ============================================================ */
+
+.state-standards-table-wrap {
+  margin: 1.5rem 0 2rem;
+  overflow-x: auto;
+  border: 1px solid var(--legend-border-default);
+  border-radius: var(--legend-radius-md);
+  corner-shape: superellipse(1.2);
+  box-shadow: var(--legend-shadow-card);
+  -webkit-overflow-scrolling: touch;
+}
+
+.state-standards-table {
+  width: 100%;
+  min-width: 68rem;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.9375rem;
+}
+
+.state-standards-table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--legend-cream-100);
+  text-align: left;
+  font-family: var(--legend-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--legend-warm-700);
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--legend-rule-strong);
+}
+
+.dark .state-standards-table thead th {
+  color: var(--legend-cream-300);
+}
+
+.state-standards-table tbody th,
+.state-standards-table tbody td {
+  padding: 0.75rem 1rem;
+  vertical-align: middle;
+  border-bottom: 1px solid var(--legend-rule);
+  line-height: 1.45;
+}
+
+.state-standards-table tbody tr:last-child th,
+.state-standards-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.state-standards-table tbody tr:hover {
+  background: var(--legend-primary-soft);
+}
+
+/* State column — flag stacked above the state name in a narrow,
+   center-aligned cell that stays pinned to the left edge while
+   the four subject columns scroll horizontally. Sticky cells
+   need an opaque background so the scrolling content doesn't
+   bleed through, and a hairline right border to set the column
+   off from whatever has just slid underneath it. */
+.state-standards-table th:first-child,
+.state-standards-table td:first-child {
+  width: 6.5rem;
+}
+
+.state-standards-table thead th:first-child {
+  text-align: center;
+  left: 0;
+  z-index: 2;
+  border-right: 1px solid var(--legend-rule);
+}
+
+.state-standards-table tbody th {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  background: var(--legend-cream-50);
+  text-align: center;
+  font-weight: 500;
+  color: var(--legend-warm-800);
+  padding: 0.75rem 0.5rem;
+  border-right: 1px solid var(--legend-rule);
+}
+
+.dark .state-standards-table tbody th {
+  color: var(--legend-cream-200);
+}
+
+.state-standards-table tbody td {
+  color: var(--legend-warm-700);
+}
+
+.dark .state-standards-table tbody td {
+  color: var(--legend-cream-300);
+}
+
+.state-standards-table tbody th img {
+  display: block;
+  width: 1.75rem;
+  height: 1.125rem;
+  margin: 0 auto 0.375rem;
+  border-radius: 2px;
+  box-shadow: 0 0 0 1px var(--legend-border-muted);
+  object-fit: cover;
+}
+
+.state-standards-table tbody th span {
+  display: block;
+  font-size: 0.8125rem;
+  line-height: 1.3;
+}
+
+/* Row hover paints a semi-transparent green over the whole row,
+   which would otherwise show the scrolled-under content through
+   the sticky State cell. Repaint the State cell with an opaque
+   blend so the column stays a clean pinned rail on hover. */
+.state-standards-table tbody tr:hover th {
+  background: color-mix(in srgb, var(--legend-cream-50) 92%, var(--legend-primary) 8%);
+}
+
+/* Cells link out to authoritative state DOE / framework pages. Keep links
+   visually quiet so 280 of them don't drown the table — inherit cell color,
+   dotted underline that solidifies and turns primary-green on hover. */
+.state-standards-table tbody a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--legend-border-muted);
+  transition: color 0.15s ease, border-bottom-color 0.15s ease, border-bottom-style 0.15s ease;
+}
+
+.state-standards-table tbody a:hover,
+.state-standards-table tbody a:focus-visible {
+  color: var(--legend-primary-strong);
+  border-bottom-color: currentColor;
+  border-bottom-style: solid;
+}
+
+.dark .state-standards-table tbody a:hover,
+.dark .state-standards-table tbody a:focus-visible {
+  color: var(--legend-primary-light);
+}
+
+@media print {
+  .state-standards-table-wrap {
+    overflow-x: visible;
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+  }
+
+  .state-standards-table {
+    min-width: 0;
+  }
+
+  .state-standards-table thead th {
+    background: #f3f3f3 !important;
+    color: #000 !important;
+  }
+
+  .state-standards-table tbody th,
+  .state-standards-table tbody td {
+    background: #fff !important;
+    color: #000 !important;
+  }
+}
+
+/* ============================================================
+   Footer attribution
+   Hide the "Powered by Mintlify" attribution link. The standards
+   content itself isn't copyrightable, so no copyright line either —
+   the brand stamp lives in the sidebar (.legend-sidebar-tagline).
+   ============================================================ */
+
+footer a[href*="mintlify.com"] {
+  display: none !important;
+}
+
+/* ============================================================
+   Sidebar brand tagline
+   "crafted with love by Legend.org" injected by scripts.js just
+   above the divider that sits above the dark-mode toggle. Mono
+   type, hairline scale, links back to legend.org.
+   ============================================================ */
+
+.legend-sidebar-tagline {
+  margin: 1.25rem 0.25rem 0.5rem;
+  font-family: var(--legend-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.04em;
+  line-height: 1.45;
+  color: var(--legend-warm-700);
+}
+
+.dark .legend-sidebar-tagline {
+  color: var(--legend-cream-300);
+}
+
+.legend-sidebar-tagline a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+}
+
+.legend-sidebar-tagline a:hover {
+  color: var(--legend-primary-strong);
+}
+
+.dark .legend-sidebar-tagline a:hover {
+  color: var(--legend-primary-light);
 }
 
 /* ============================================================
