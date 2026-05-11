@@ -355,6 +355,37 @@ a[nav-tabs-item] {
   word-break: break-word;
 }
 
+/* ------------------------------------------------------------
+   Download PDF — companion to .official-source, points readers
+   at the live PDF of the standard.
+   ------------------------------------------------------------ */
+
+.download-pdf {
+  margin: -1.25rem 0 1.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.download-pdf::before {
+  content: "Download PDF";
+  display: inline-block;
+  font-family: var(--legend-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--legend-primary-strong);
+  margin-right: 0.6rem;
+}
+
+.dark .download-pdf::before {
+  color: var(--legend-primary-light);
+}
+
+.download-pdf a {
+  word-break: break-word;
+}
+
 /* ============================================================
    PRIMITIVE 2 — Citation block
    Official source footer: publisher, URL, version, last-updated.
@@ -726,6 +757,14 @@ a[nav-tabs-item] {
 }
 
 .dark .official-source::before {
+  color: var(--legend-accent-text-loud, var(--legend-primary-light));
+}
+
+.download-pdf::before {
+  color: var(--legend-accent-fill, var(--legend-primary-strong));
+}
+
+.dark .download-pdf::before {
   color: var(--legend-accent-text-loud, var(--legend-primary-light));
 }
 
