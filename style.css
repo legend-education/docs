@@ -324,6 +324,37 @@ a[nav-tabs-item] {
   margin-top: 0.75rem;
 }
 
+/* ------------------------------------------------------------
+   Official source — compact link line that sits right under
+   the answer-box and points readers at the publisher.
+   ------------------------------------------------------------ */
+
+.official-source {
+  margin: -1rem 0 1.75rem;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+
+.official-source::before {
+  content: "Official source";
+  display: inline-block;
+  font-family: var(--legend-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--legend-primary-strong);
+  margin-right: 0.6rem;
+}
+
+.dark .official-source::before {
+  color: var(--legend-primary-light);
+}
+
+.official-source a {
+  word-break: break-word;
+}
+
 /* ============================================================
    PRIMITIVE 2 — Citation block
    Official source footer: publisher, URL, version, last-updated.
@@ -687,6 +718,14 @@ a[nav-tabs-item] {
 }
 
 .dark .answer-box::before {
+  color: var(--legend-accent-text-loud, var(--legend-primary-light));
+}
+
+.official-source::before {
+  color: var(--legend-accent-fill, var(--legend-primary-strong));
+}
+
+.dark .official-source::before {
   color: var(--legend-accent-text-loud, var(--legend-primary-light));
 }
 
