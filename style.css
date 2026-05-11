@@ -221,7 +221,9 @@ toc-item[data-active-deepest] > a::before {
 /* ------------------------------------------------------------
    Pin the desktop search button into the navbar, right-aligned
    to the navbar edge. Keeps the existing search button width —
-   it just moves up into the navbar.
+   it just moves up into the navbar. The Ask AI assistant entry
+   tucks in immediately to the left of the search bar with a
+   half-rem gap, so the two top-right controls read as a pair.
    ------------------------------------------------------------ */
 
 @media (min-width: 1024px) {
@@ -232,6 +234,19 @@ toc-item[data-active-deepest] > a::before {
     left: auto;
     width: 14rem !important;
     z-index: 50;   /* above #navbar (z-30) */
+  }
+
+  /* Ask AI button — pinned just to the left of the search bar.
+     The right offset is the search bar's right padding (1.5rem)
+     plus its width (14rem) plus a 0.5rem gap. Width is left to
+     the assistant entry's intrinsic size so the icon-or-pill
+     variants Mintlify ships both render correctly. */
+  #assistant-entry {
+    position: fixed !important;
+    top: 0.625rem;
+    right: calc(1.5rem + 14rem + 0.5rem);
+    left: auto;
+    z-index: 50;
   }
 
   /* Slide sidebar nav items up to fill the empty space the
@@ -368,6 +383,107 @@ a[nav-tabs-item] {
 
 .citation a {
   word-break: break-word;
+}
+
+/* ============================================================
+   PRIMITIVE 2b — Framework facts
+   The 10-row "facts at a glance" definition list that sits at
+   the top of every framework overview page (Common Core, NGSS,
+   WIDA, etc.). Same chrome as .citation, but tuned to carry a
+   longer list with row dividers between adjacent dt/dd pairs.
+   Reuses the framework accent token so the eyebrow label
+   matches the page's accent.
+   ============================================================ */
+
+.framework-facts {
+  margin: 0 0 2rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--legend-cream-50);
+  border: 1px solid var(--legend-border-default);
+  border-radius: var(--legend-radius-md);
+  corner-shape: superellipse(1.2);
+  box-shadow: var(--legend-shadow-card);
+  font-size: 0.9375rem;
+}
+
+.framework-facts::before {
+  content: "Facts at a glance";
+  display: block;
+  font-family: var(--legend-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--legend-accent-fill, var(--legend-primary-strong));
+  margin-bottom: 0.75rem;
+}
+
+.dark .framework-facts::before {
+  color: var(--legend-accent-text-loud, var(--legend-primary-light));
+}
+
+.framework-facts dl {
+  display: grid;
+  grid-template-columns: 12rem 1fr;
+  gap: 0;
+  margin: 0;
+}
+
+.framework-facts dt,
+.framework-facts dd {
+  padding: 0.625rem 0;
+  border-top: 1px solid var(--legend-rule);
+  line-height: 1.5;
+}
+
+.framework-facts dt:first-of-type,
+.framework-facts dt:first-of-type + dd {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.framework-facts dt {
+  font-family: var(--legend-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--legend-warm-700);
+  font-weight: 500;
+  padding-right: 1rem;
+}
+
+.dark .framework-facts dt {
+  color: var(--legend-cream-300);
+}
+
+.framework-facts dd {
+  margin: 0;
+  font-size: 0.9375rem;
+  color: var(--legend-warm-800);
+}
+
+.dark .framework-facts dd {
+  color: var(--legend-cream-200);
+}
+
+.framework-facts a {
+  word-break: break-word;
+}
+
+@media (max-width: 640px) {
+  .framework-facts dl {
+    grid-template-columns: 1fr;
+  }
+
+  .framework-facts dd {
+    padding-top: 0;
+    padding-bottom: 0.625rem;
+    border-top: 0;
+  }
+
+  .framework-facts dt {
+    padding-bottom: 0.25rem;
+  }
 }
 
 /* ============================================================
@@ -648,98 +764,93 @@ a[nav-tabs-item] {
 
 /* ============================================================
    PRIMITIVE 7 — Accordion (Mintlify <Accordion>)
-   Match the v2 marketing FAQ pill: rounded-18, hairline alpha
-   border, text-loud question / text-muted answer, gentle hover.
-   Selectors target the data attributes Mintlify exposes plus a
-   permissive `details`/`summary` fallback so this works whether
-   the runtime ships HTML <details> or a custom React widget.
+   Flat, square FAQ list: no outer container chrome, no rounded
+   corners, no shadow, no per-item background. The group is
+   bracketed by hairline rules top and bottom; items are
+   separated by Mintlify's built-in `divide-y`. The chevron stays
+   tucked next to the question text (no right-alignment trick).
+
+   Mintlify renders these as <details class="accordion"> inside
+   <div class="accordion-group ...">, with Tailwind utilities
+   pinned on. !important is used surgically to defeat the
+   Tailwind values (rounded-xl, border, bg-background-light) that
+   load after this stylesheet.
    ============================================================ */
 
-[data-accordion],
-[data-component="accordion"],
-details[data-accordion-item],
-.accordion-item,
-details.accordion {
+main .accordion-group {
+  margin: 1.25rem 0;
+  padding: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-top: 1px solid var(--legend-border-muted) !important;
+  border-bottom: 1px solid var(--legend-border-muted) !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+main details.accordion {
   position: relative;
-  margin: 0.75rem 0;
-  border-radius: var(--legend-radius-lg);
-  corner-shape: superellipse(1.2);
-  background: var(--legend-cream-50);
-  border: 1px solid var(--legend-border-default);
-  box-shadow: var(--legend-shadow-card);
+  margin: 0 !important;
+  background: transparent !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
   overflow: clip;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s ease;
 }
 
-[data-accordion]:hover,
-[data-component="accordion"]:hover,
-details[data-accordion-item]:hover,
-.accordion-item:hover,
-details.accordion:hover {
-  border-color: var(--legend-border-loud);
-  box-shadow: var(--legend-shadow-card-hover);
+/* Hairline between adjacent items (replaces the rounded chrome). */
+main details.accordion + details.accordion {
+  border-top: 1px solid var(--legend-border-muted) !important;
 }
 
-[data-accordion] > button,
-[data-component="accordion"] > button,
-details[data-accordion-item] > summary,
-.accordion-item > button,
-.accordion-item > summary,
-details.accordion > summary {
-  width: 100%;
+main details.accordion:hover {
+  background: var(--legend-surface-faint) !important;
+}
+
+main details.accordion > summary {
   display: flex;
+  flex-direction: row;
   align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-  padding: 1rem 1.25rem;
+  gap: 0.625rem;
+  width: 100%;
+  padding: 1rem 0.25rem !important;
   font-size: 1rem;
   font-weight: 500;
   color: var(--legend-warm-800);
-  background: transparent;
+  background: transparent !important;
   border: 0;
+  border-radius: 0 !important;
   cursor: pointer;
   text-align: left;
   list-style: none;
 }
 
-.dark [data-accordion] > button,
-.dark [data-component="accordion"] > button,
-.dark details[data-accordion-item] > summary,
-.dark .accordion-item > button,
-.dark .accordion-item > summary,
-.dark details.accordion > summary {
+main details.accordion > summary:hover {
+  background: transparent !important;
+}
+
+.dark main details.accordion > summary {
   color: var(--legend-cream-200);
 }
 
-details.accordion > summary::-webkit-details-marker,
-details[data-accordion-item] > summary::-webkit-details-marker {
+main details.accordion > summary::-webkit-details-marker {
   display: none;
 }
 
-[data-accordion] [data-accordion-content],
-[data-component="accordion"] [data-accordion-content],
-.accordion-item > div:last-child,
-details.accordion > *:not(summary) {
-  padding: 0 1.25rem 1rem;
+/* Body content. Mintlify wraps the answer in a non-summary child
+   element with its own padding; we collapse the side padding so
+   the answer aligns flush with the question text. */
+main details.accordion > *:not(summary) {
+  padding: 0 0.25rem 1rem !important;
   font-size: 0.9375rem;
   line-height: 1.6;
   color: var(--legend-warm-700);
 }
 
-.dark [data-accordion] [data-accordion-content],
-.dark [data-component="accordion"] [data-accordion-content],
-.dark .accordion-item > div:last-child,
-.dark details.accordion > *:not(summary) {
+.dark main details.accordion > *:not(summary) {
   color: var(--legend-cream-300);
-}
-
-/* AccordionGroup spacing — keep items tight together. */
-[data-accordion-group],
-.accordion-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin: 1.25rem 0;
 }
 
 /* ============================================================
