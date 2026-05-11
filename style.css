@@ -219,7 +219,15 @@ toc-item[data-active-deepest] > a::before {
 }
 
 /* ------------------------------------------------------------
-   TEMP DEBUG: navbar pinning disabled to test click interception.
+   Navbar layout is handled by the almond theme natively: the
+   search button (#search-bar-entry) renders as an icon in the
+   navbar at top-right, and the AI assistant renders as a
+   floating "Ask a question…" entry. An earlier version of this
+   file pinned #search-bar-entry with `position: fixed; z-index: 50;
+   width: 14rem` to drag it into the navbar from the sidebar; with
+   the current theme that overlay sits on top of the real search
+   icon and the kebab menu and silently swallows clicks. Leaving
+   this intentionally empty so the theme's own positioning wins.
    ------------------------------------------------------------ */
 
 a[nav-tabs-item] {
