@@ -554,7 +554,25 @@ a[nav-tabs-item] {
 /* ============================================================
    PRIMITIVE 3 — Standards table
    Sticky header, monospace standard codes, hover rows.
+
+   Wrapped in `.standards-table-wrap` (injected by scripts.js) so the
+   table can horizontally scroll on narrow viewports without losing
+   its table layout. The wrapper owns the chrome (border, radius,
+   shadow); the table inside drops chrome and takes a min-width so
+   it actually overflows on phones/tablet-portrait. Unwrapped tables
+   still render correctly thanks to the standalone .standards-table
+   block below — the in-wrap overrides only kick in when present.
    ============================================================ */
+
+.standards-table-wrap {
+  margin: 1.5rem 0 2rem;
+  overflow-x: auto;
+  border: 1px solid var(--legend-border-default);
+  border-radius: var(--legend-radius-md);
+  corner-shape: superellipse(1.2);
+  box-shadow: var(--legend-shadow-card);
+  -webkit-overflow-scrolling: touch;
+}
 
 .standards-table {
   width: 100%;
@@ -567,6 +585,15 @@ a[nav-tabs-item] {
   corner-shape: superellipse(1.2);
   overflow: hidden;
   box-shadow: var(--legend-shadow-card);
+}
+
+.standards-table-wrap .standards-table {
+  margin: 0;
+  min-width: 48rem;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  overflow: visible;
 }
 
 .standards-table thead th {
@@ -1228,6 +1255,278 @@ a.card:hover,
 }
 
 /* ============================================================
+   PRIMITIVE 12 — State map
+   Interactive U.S. state map that sits above .state-standards-table-wrap
+   on the homepage. Full-width map on top, popover card below (renders
+   only after the user clicks a state). Clicking a state highlights it
+   and populates the card with links pulled from the adjacent table.
+   ============================================================ */
+
+.state-map-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin: 1.5rem 0 2rem;
+}
+
+.state-map-svg {
+  position: relative;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: var(--legend-cream-50);
+  border: 1px solid var(--legend-border-default);
+  border-radius: var(--legend-radius-md);
+  corner-shape: superellipse(1.2);
+  box-shadow: var(--legend-shadow-card);
+}
+
+.state-map-svg svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 40rem;
+  margin: 0 auto;
+}
+
+/* Each <path> and the DC <circle> are interactive hit targets.
+   Default fill matches the table's row background so the map reads
+   as a single tonal block; hover/focus lift to primary-soft; the
+   currently selected state fills with the brand green. */
+.state-map-svg path,
+.state-map-svg circle {
+  fill: var(--legend-cream-100);
+  stroke: var(--legend-rule-strong);
+  stroke-width: 0.75;
+  cursor: pointer;
+  transition: fill 0.15s ease, stroke 0.15s ease, stroke-width 0.15s ease;
+  outline: none;
+}
+
+.state-map-svg path:hover,
+.state-map-svg path:focus-visible,
+.state-map-svg circle:hover,
+.state-map-svg circle:focus-visible {
+  fill: var(--legend-primary-soft);
+  stroke: var(--legend-primary-strong);
+  stroke-width: 1.25;
+}
+
+.state-map-svg [aria-pressed="true"] {
+  fill: var(--legend-primary) !important;
+  stroke: var(--legend-primary-strong) !important;
+  stroke-width: 1.25;
+}
+
+/* DC is a 10px-diameter circle — paint it like a marker (filled
+   primary, white halo) so it reads as a deliberate dot. */
+.state-map-svg circle {
+  fill: var(--legend-warm-700);
+  stroke: var(--legend-cream-50);
+  stroke-width: 1.25;
+}
+
+.state-map-svg circle:hover,
+.state-map-svg circle:focus-visible {
+  fill: var(--legend-primary-strong);
+  stroke: var(--legend-cream-50);
+}
+
+.dark .state-map-svg path,
+.dark .state-map-svg circle {
+  fill: var(--legend-cream-200);
+  stroke: var(--legend-rule-strong);
+}
+
+.dark .state-map-svg circle {
+  fill: var(--legend-cream-300);
+  stroke: var(--legend-warm-900);
+}
+
+.dark .state-map-svg path:hover,
+.dark .state-map-svg path:focus-visible,
+.dark .state-map-svg circle:hover,
+.dark .state-map-svg circle:focus-visible {
+  fill: var(--legend-primary-soft);
+  stroke: var(--legend-primary-light);
+}
+
+.dark .state-map-svg circle:hover,
+.dark .state-map-svg circle:focus-visible {
+  fill: var(--legend-primary-light);
+  stroke: var(--legend-warm-900);
+}
+
+.dark .state-map-svg [aria-pressed="true"] {
+  fill: var(--legend-primary) !important;
+  stroke: var(--legend-primary-light) !important;
+}
+
+/* Popover card — same chrome as .framework-facts. Sits below the map
+   in normal flow and renders content only after a state is selected. */
+.state-map-card {
+  padding: 1.25rem 1.5rem;
+  background: var(--legend-cream-50);
+  border: 1px solid var(--legend-border-default);
+  border-radius: var(--legend-radius-md);
+  corner-shape: superellipse(1.2);
+  box-shadow: var(--legend-shadow-card);
+  font-size: 0.9375rem;
+}
+
+.state-map-card-empty {
+  margin: 0;
+  font-family: var(--legend-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--legend-warm-700);
+  line-height: 1.5;
+}
+
+.dark .state-map-card-empty {
+  color: var(--legend-cream-300);
+}
+
+.state-map-card-state-name {
+  margin: 0 0 1rem;
+  font-family: "Fraunces", Georgia, serif;
+  font-size: 1.375rem;
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.012em;
+  color: var(--legend-primary-strong);
+}
+
+.dark .state-map-card-state-name {
+  color: var(--legend-primary-light);
+}
+
+.state-map-card-list {
+  margin: 0;
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.5rem 1rem;
+  align-items: baseline;
+}
+
+.state-map-card-list dt {
+  font-family: var(--legend-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--legend-warm-700);
+  font-weight: 500;
+}
+
+.dark .state-map-card-list dt {
+  color: var(--legend-cream-300);
+}
+
+.state-map-card-list dd {
+  margin: 0;
+  color: var(--legend-warm-800);
+  line-height: 1.55;
+}
+
+.dark .state-map-card-list dd {
+  color: var(--legend-cream-200);
+}
+
+.state-map-card-list a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px dotted var(--legend-border-muted);
+  transition: color 0.15s ease, border-bottom-color 0.15s ease, border-bottom-style 0.15s ease;
+}
+
+.state-map-card-list a:hover,
+.state-map-card-list a:focus-visible {
+  color: var(--legend-primary-strong);
+  border-bottom-color: currentColor;
+  border-bottom-style: solid;
+}
+
+.dark .state-map-card-list a:hover,
+.dark .state-map-card-list a:focus-visible {
+  color: var(--legend-primary-light);
+}
+
+/* "View in full table" pill button — same DNA as .legend-pill--accent
+   but rendered as a button so it can scroll-and-flash the matching row. */
+.state-map-card-jump {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.375rem;
+  margin-top: 1.25rem;
+  padding: 0.375rem 0.75rem;
+  background: var(--legend-primary-soft);
+  color: var(--legend-primary-strong);
+  border-radius: 999px;
+  corner-shape: superellipse(1.2);
+  font-family: var(--legend-mono);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.state-map-card-jump:hover,
+.state-map-card-jump:focus-visible {
+  background: var(--legend-primary);
+  color: var(--legend-cream-50);
+  outline: none;
+}
+
+.dark .state-map-card-jump {
+  color: var(--legend-primary-light);
+}
+
+.dark .state-map-card-jump:hover,
+.dark .state-map-card-jump:focus-visible {
+  background: var(--legend-primary);
+  color: var(--legend-warm-900);
+}
+
+/* Flash the target table row when the jump link fires. Animates the
+   row's th + td backgrounds because the sticky State th has its own
+   opaque background and won't pick up a tr-level animation. */
+@keyframes legend-state-row-flash {
+  0% {
+    background: var(--legend-primary-soft);
+  }
+  100% {
+    background: transparent;
+  }
+}
+
+.state-standards-table tbody tr.is-flash > th,
+.state-standards-table tbody tr.is-flash > td {
+  animation: legend-state-row-flash 1.8s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .state-map-svg path,
+  .state-map-svg circle,
+  .state-map-card-jump {
+    transition: none;
+  }
+  .state-standards-table tbody tr.is-flash > th,
+  .state-standards-table tbody tr.is-flash > td {
+    animation: none;
+  }
+}
+
+@media print {
+  .state-map-block {
+    display: none;
+  }
+}
+
+/* ============================================================
    Footer attribution
    Hide the "Powered by Mintlify" attribution link. The standards
    content itself isn't copyrightable, so no copyright line either —
@@ -1312,6 +1611,17 @@ footer a[href*="mintlify.com"] {
     break-inside: avoid;
     background: #fff !important;
     border: 1px solid #000 !important;
+  }
+
+  .standards-table-wrap {
+    overflow-x: visible;
+    border: 1px solid #000 !important;
+    box-shadow: none !important;
+  }
+
+  .standards-table-wrap .standards-table {
+    min-width: 0;
+    border: 0 !important;
   }
 
   .standards-table {

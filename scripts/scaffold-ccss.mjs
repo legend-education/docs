@@ -91,22 +91,12 @@ function learningResource({ name, urlPath, level, audience = "teacher" }) {
   });
 }
 
-function citation(url = PUBLISHER_URL) {
-  return [
-    `<div class="citation">`,
-    `  <dl>`,
-    `    <dt>Publisher</dt>`,
-    `    <dd>${PUBLISHER}</dd>`,
-    `    <dt>Source</dt>`,
-    `    <dd><a href="${url}">${url.replace(/^https?:\/\//, "")}</a></dd>`,
-    `    <dt>Version</dt>`,
-    `    <dd>2010 (no revision since)</dd>`,
-    `    <dt>Last updated</dt>`,
-    `    <dd>${TODAY}</dd>`,
-    `  </dl>`,
-    `</div>`,
-    "",
-  ].join("\n");
+// The Official Source citation block used to live here. Mintlify's MDX
+// renderer strips the inner <dl>/<dt>/<dd>, which leaves an empty
+// "Official source" box on every rendered page. Until we have a primitive
+// that survives the renderer, scaffolding skips this block.
+function citation(_url = PUBLISHER_URL) {
+  return "";
 }
 
 function answerBox(text) {

@@ -82,6 +82,27 @@ Cut these on sight:
 - "It's important to remember..."
 - "At its core..."
 - "Let's dive into..."
+- "contribute to overall" / "contribute to its overall" (and any "contributes/contributing to (its) overall" variant). This is filler. Name the actual effect instead.
+- "evidence including" (and "examples including," "details including"). Drop the "including" and lead with the evidence itself, or use "such as" only when a real list follows.
+- "carry the weight" (and "shoulder the burden," "bear the load," "shoulder the work," and other generic teacher-pity tropes). Sentimental without specifics. Name what teachers actually do.
+
+Bad:
+> These standards contribute to students' overall literacy growth.
+
+Good:
+> These standards build the reading and writing habits students use across subjects.
+
+Bad:
+> Students cite evidence including direct quotes and paraphrased details.
+
+Good:
+> Students cite direct quotes and paraphrased details from the text.
+
+Bad:
+> Teachers carry the weight of a system that keeps changing.
+
+Good:
+> Teachers do the actual teaching in a system that keeps changing the rules on them.
 
 ### Stock LLM vocabulary
 
@@ -445,6 +466,18 @@ Instead of:
 Write:
 > Teacher-reviewed feedback, drafted with AI.
 
+Instead of:
+> These standards contribute to a student's overall growth as a reader.
+
+Write:
+> These standards build the close-reading habits students use in every subject.
+
+Instead of:
+> Students cite evidence including quotes, paraphrases, and summaries.
+
+Write:
+> Students cite quotes and paraphrases from the text.
+
 ## Default Brand Paragraph
 
 Use this as the baseline style:
@@ -471,9 +504,12 @@ Before handing back any teacher-facing draft, run this check:
 2. Run the Final Test above on the full draft. Rewrite anything that fails.
 3. Search the draft for `—` and `–`. Remove every instance and rework the sentence with a period, comma, parenthesis, or colon.
 4. Scan for triads. Three short parallel sentences in a row, or three modifiers joined by "and" or "or." The fix is usually to delete the third item or to merge two of them into one phrase.
-5. Scan the "LLM Tells to Avoid" stock-phrase and stock-vocabulary lists. Replace each hit.
-6. Scan the "Avoid" list under "Sentence Style" and "Preferred Vocabulary." Replace each hit.
-7. Confirm teachers stay in control of grading judgments in every claim.
-8. Confirm the benefit is concrete, not abstract.
+5. Search the draft for "contribute to overall," "contribute to its overall," and any "contribute to (a/the/their) overall" variant. Replace each with a sentence that names the actual effect.
+6. Search the draft for "evidence including," "examples including," and "details including." Drop "including" and either lead with the evidence itself or use "such as" only when a real list follows.
+7. Search the draft for "carry the weight," "shoulder the burden," "bear the load," and any similar teacher-pity metaphor. Replace each with a concrete description of what teachers actually do.
+8. Scan the "LLM Tells to Avoid" stock-phrase and stock-vocabulary lists. Replace each hit.
+9. Scan the "Avoid" list under "Sentence Style" and "Preferred Vocabulary." Replace each hit.
+10. Confirm teachers stay in control of grading judgments in every claim.
+11. Confirm the benefit is concrete, not abstract.
 
 Do **not** invoke the `humanize-text` skill from inside this workflow. The two skills are independent. If the user wants humanized output, they will ask for it explicitly, and a brand-voice editing pass should follow that humanizer pass, not precede it.

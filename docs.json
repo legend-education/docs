@@ -52,7 +52,8 @@
         "group": "Guides",
         "pages": [
           "standards/guides/what-are-learning-standards",
-          "standards/guides/standards-vs-curriculum-vs-rubrics"
+          "standards/guides/standards-vs-curriculum-vs-rubrics",
+          "standards/guides/why-were-building-this"
         ]
       },
       {
@@ -77,48 +78,19 @@
                     ]
                   },
                   {
-                    "group": "Grades K-5",
+                    "group": "Grades",
                     "pages": [
                       "standards/common-core/ela/kindergarten/index",
                       "standards/common-core/ela/grade-1/index",
                       "standards/common-core/ela/grade-2/index",
                       "standards/common-core/ela/grade-3/index",
                       "standards/common-core/ela/grade-4/index",
-                      "standards/common-core/ela/grade-5/index"
-                    ]
-                  },
-                  {
-                    "group": "Grades 6-8",
-                    "pages": [
+                      "standards/common-core/ela/grade-5/index",
                       "standards/common-core/ela/grade-6/index",
                       "standards/common-core/ela/grade-7/index",
-                      "standards/common-core/ela/grade-8/index"
-                    ]
-                  },
-                  {
-                    "group": "Grades 9-12 bands",
-                    "pages": [
+                      "standards/common-core/ela/grade-8/index",
                       "standards/common-core/ela/grades-9-10/index",
                       "standards/common-core/ela/grades-11-12/index"
-                    ]
-                  },
-                  {
-                    "group": "Literacy in content areas",
-                    "pages": [
-                      "standards/common-core/ela/literacy-history-social-studies/grades-6-8",
-                      "standards/common-core/ela/literacy-history-social-studies/grades-9-10",
-                      "standards/common-core/ela/literacy-history-social-studies/grades-11-12",
-                      "standards/common-core/ela/literacy-science-technical/grades-6-8",
-                      "standards/common-core/ela/literacy-science-technical/grades-9-10",
-                      "standards/common-core/ela/literacy-science-technical/grades-11-12"
-                    ]
-                  },
-                  {
-                    "group": "Per-standard examples",
-                    "pages": [
-                      "standards/common-core/ela/grade-9-10-writing",
-                      "standards/common-core/ela/w-9-10-1",
-                      "standards/common-core/ela/w-9-10-2"
                     ]
                   }
                 ]
@@ -142,7 +114,7 @@
                     ]
                   },
                   {
-                    "group": "Grades K-5",
+                    "group": "Grades",
                     "pages": [
                       {
                         "group": "Kindergarten",
@@ -207,12 +179,7 @@
                           "standards/common-core/math/grade-5/measurement-data",
                           "standards/common-core/math/grade-5/geometry"
                         ]
-                      }
-                    ]
-                  },
-                  {
-                    "group": "Grades 6-8",
-                    "pages": [
+                      },
                       {
                         "group": "Grade 6",
                         "pages": [
@@ -245,21 +212,38 @@
                           "standards/common-core/math/grade-8/geometry",
                           "standards/common-core/math/grade-8/statistics-probability"
                         ]
+                      },
+                      {
+                        "group": "High school",
+                        "pages": [
+                          "standards/common-core/math/high-school/index",
+                          "standards/common-core/math/high-school/number-quantity",
+                          "standards/common-core/math/high-school/algebra",
+                          "standards/common-core/math/high-school/functions",
+                          "standards/common-core/math/high-school/modeling",
+                          "standards/common-core/math/high-school/geometry",
+                          "standards/common-core/math/high-school/statistics-probability"
+                        ]
                       }
                     ]
-                  },
-                  {
-                    "group": "High school",
-                    "pages": [
-                      "standards/common-core/math/high-school/index",
-                      "standards/common-core/math/high-school/number-quantity",
-                      "standards/common-core/math/high-school/algebra",
-                      "standards/common-core/math/high-school/functions",
-                      "standards/common-core/math/high-school/modeling",
-                      "standards/common-core/math/high-school/geometry",
-                      "standards/common-core/math/high-school/statistics-probability"
-                    ]
                   }
+                ]
+              },
+              {
+                "group": "History/Social Studies",
+                "pages": [
+                  "standards/common-core/ela/literacy-history-social-studies/index",
+                  "standards/common-core/ela/literacy-history-social-studies/grades-6-8",
+                  "standards/common-core/ela/literacy-history-social-studies/grades-9-10",
+                  "standards/common-core/ela/literacy-history-social-studies/grades-11-12"
+                ]
+              },
+              {
+                "group": "Science and Technical",
+                "pages": [
+                  "standards/common-core/ela/literacy-science-technical/grades-6-8",
+                  "standards/common-core/ela/literacy-science-technical/grades-9-10",
+                  "standards/common-core/ela/literacy-science-technical/grades-11-12"
                 ]
               }
             ]
