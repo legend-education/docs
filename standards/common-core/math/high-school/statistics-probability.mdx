@@ -2,7 +2,7 @@
 title: "High school Statistics & Probability (Common Core)"
 sidebarTitle: "Statistics & Probability"
 description: "Common Core high school Statistics & Probability standards with explanations, classroom examples, and citations."
-keywords: ["Common Core", "high school Statistics & Probability", "Statistics & Probability"]
+keywords: ["Common Core", "high school Statistics and Probability", "S-ID", "S-IC", "S-CP", "S-MD", "inference", "conditional probability"]
 "og:title": "High school Statistics & Probability (Common Core)"
 "og:description": "Common Core high school Statistics & Probability standards with explanations, classroom examples, and citations."
 "og:image": "/og/default.png"
@@ -12,51 +12,34 @@ robots: "index,follow,max-snippet:-1,max-image-preview:large"
 author: "Legend Standards Editorial"
 publisher: "Common Core State Standards Initiative"
 publisher_url: "https://www.corestandards.org/"
-last_updated: "2026-05-06"
+last_updated: "2026-05-12"
+cssClasses: ["framework-ccss-math"]
 ---
+
 # What are the Common Core high school Statistics & Probability standards?
 
 <div class="answer-box">
-TODO: 50–80 word simple summary covering the high school Statistics & Probability conceptual category.
+  Statistics and Probability in high school is a conceptual category with four domains: Interpreting Categorical and Quantitative Data (`S-ID`), Making Inferences and Justifying Conclusions (`S-IC`), Conditional Probability and the Rules of Probability (`S-CP`), and Using Probability to Make Decisions (`S-MD`). The work moves from describing data, through inferring conclusions about populations, through formal probability rules, to decision-making under uncertainty.
 </div>
+
+<div class="official-downloads">
+  [Math standards (PDF)](https://corestandards.org/wp-content/uploads/2023/09/Math_Standards1.pdf)
+</div>
+
 <script type="application/ld+json">{`
 {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position": 1,
-      "name": "Standards",
-      "item": "https://standards.legend.org/standards"
-    },
-    {
-      "@type": "ListItem",
-      "position": 2,
-      "name": "Common Core",
-      "item": "https://standards.legend.org/standards/common-core"
-    },
-    {
-      "@type": "ListItem",
-      "position": 3,
-      "name": "Math",
-      "item": "https://standards.legend.org/standards/common-core/math"
-    },
-    {
-      "@type": "ListItem",
-      "position": 4,
-      "name": "High school",
-      "item": "https://standards.legend.org/standards/common-core/math/high-school"
-    },
-    {
-      "@type": "ListItem",
-      "position": 5,
-      "name": "Statistics & Probability",
-      "item": "https://standards.legend.org/standards/common-core/math/high-school/statistics-probability"
-    }
+    { "@type": "ListItem", "position": 1, "name": "Standards", "item": "https://standards.legend.org/standards" },
+    { "@type": "ListItem", "position": 2, "name": "Common Core", "item": "https://standards.legend.org/standards/common-core" },
+    { "@type": "ListItem", "position": 3, "name": "Math", "item": "https://standards.legend.org/standards/common-core/math" },
+    { "@type": "ListItem", "position": 4, "name": "High school", "item": "https://standards.legend.org/standards/common-core/math/high-school" },
+    { "@type": "ListItem", "position": 5, "name": "Statistics & Probability", "item": "https://standards.legend.org/standards/common-core/math/high-school/statistics-probability" }
   ]
 }
 `}</script>
+
 <script type="application/ld+json">{`
 {
   "@context": "https://schema.org",
@@ -66,22 +49,111 @@ TODO: 50–80 word simple summary covering the high school Statistics & Probabil
   "inLanguage": "en",
   "educationalLevel": "Grades 9-12",
   "learningResourceType": "Standards reference",
-  "audience": {
-    "@type": "EducationalAudience",
-    "educationalRole": "teacher"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "Common Core State Standards Initiative",
-    "url": "https://www.corestandards.org/"
-  },
-  "dateModified": "2026-05-06"
+  "audience": { "@type": "EducationalAudience", "educationalRole": "teacher" },
+  "publisher": { "@type": "Organization", "name": "Common Core State Standards Initiative", "url": "https://www.corestandards.org/" },
+  "dateModified": "2026-05-12"
 }
 `}</script>
+
 ## What it covers
 
-- TODO: cluster headings
-- TODO: cluster headings
+- Interpreting Categorical and Quantitative Data: summarize, represent, and interpret data on a single count or measurement variable; summarize, represent, and interpret data on two categorical and quantitative variables; interpret linear models (`S-ID`).
+- Making Inferences and Justifying Conclusions: understand and evaluate random processes underlying statistical experiments; make inferences and justify conclusions from sample surveys, experiments, and observational studies (`S-IC`).
+- Conditional Probability and the Rules of Probability: understand independence and conditional probability and use them to interpret data; use the rules of probability to compute probabilities of compound events in a uniform probability model (`S-CP`).
+- Using Probability to Make Decisions: calculate expected values and use them to solve problems; use probability to evaluate outcomes of decisions (`S-MD`).
+
+## Standards
+
+<table class="standards-table">
+  <thead><tr><th>Code</th><th>Plain meaning</th><th>Official text</th><th>Cluster</th></tr></thead>
+  <tbody>
+    <tr><td>S-ID.A.1</td><td>Represent data with plots on the real number line (dot plots, histograms, box plots).</td><td>Represent data with plots on the real number line (dot plots, histograms, and box plots).</td><td>One-variable data</td></tr>
+    <tr><td>S-ID.A.2</td><td>Compare data sets using measures of center (median, mean) and spread (interquartile range, standard deviation).</td><td>Use statistics appropriate to the shape of the data distribution to compare center (median, mean) and spread (interquartile range, standard deviation) of two or more different data sets.</td><td>One-variable data</td></tr>
+    <tr><td>S-ID.A.3</td><td>Interpret center and spread accounting for outliers.</td><td>Interpret differences in shape, center, and spread in the context of the data sets, accounting for possible effects of extreme data points (outliers).</td><td>One-variable data</td></tr>
+    <tr><td>S-ID.A.4</td><td>Use the normal distribution to estimate population percentages.</td><td>Use the mean and standard deviation of a data set to fit it to a normal distribution and to estimate population percentages. Recognize that there are data sets for which such a procedure is not appropriate. Use calculators, spreadsheets, and tables to estimate areas under the normal curve.</td><td>One-variable data</td></tr>
+    <tr><td>S-ID.B.5</td><td>Summarize categorical data for two categories in two-way tables. Interpret joint, marginal, and conditional frequencies.</td><td>Summarize categorical data for two categories in two-way frequency tables. Interpret relative frequencies in the context of the data (including joint, marginal, and conditional relative frequencies). Recognize possible associations and trends in the data.</td><td>Two-variable data</td></tr>
+    <tr><td>S-ID.B.6</td><td>Fit a function to scatter plot data and analyze residuals.</td><td>Represent data on two quantitative variables on a scatter plot, and describe how the variables are related.</td><td>Two-variable data</td></tr>
+    <tr><td>S-ID.C.7</td><td>Interpret slope and intercept of a linear model in context.</td><td>Interpret the slope (rate of change) and the intercept (constant term) of a linear model in the context of the data.</td><td>Interpret linear models</td></tr>
+    <tr><td>S-ID.C.8</td><td>Compute and interpret the correlation coefficient of a linear fit.</td><td>Compute (using technology) and interpret the correlation coefficient of a linear fit.</td><td>Interpret linear models</td></tr>
+    <tr><td>S-ID.C.9</td><td>Distinguish between correlation and causation.</td><td>Distinguish between correlation and causation.</td><td>Interpret linear models</td></tr>
+    <tr><td>S-IC.A.1</td><td>Statistics is the process of making inferences about a population from a random sample.</td><td>Understand statistics as a process for making inferences about population parameters based on a random sample from that population.</td><td>Random processes</td></tr>
+    <tr><td>S-IC.A.2</td><td>Decide if a data-generating process is consistent with a stated model.</td><td>Decide if a specified model is consistent with results from a given data-generating process, e.g., using simulation. For example, a model says a spinning coin falls heads up with probability 0.5. Would a result of 5 tails in a row cause you to question the model?</td><td>Random processes</td></tr>
+    <tr><td>S-IC.B.3</td><td>Distinguish among sample surveys, experiments, and observational studies. Recognize the role of randomization.</td><td>Recognize the purposes of and differences among sample surveys, experiments, and observational studies; explain how randomization relates to each.</td><td>Inference from studies</td></tr>
+    <tr><td>S-IC.B.4</td><td>Use sample data to estimate population means or proportions. Use simulation to develop a margin of error.</td><td>Use data from a sample survey to estimate a population mean or proportion; develop a margin of error through the use of simulation models for random sampling.</td><td>Inference from studies</td></tr>
+    <tr><td>S-IC.B.5</td><td>Use data from an experiment to compare two treatments. Use simulation to decide if differences between parameters are significant.</td><td>Use data from a randomized experiment to compare two treatments; use simulations to decide if differences between parameters are significant.</td><td>Inference from studies</td></tr>
+    <tr><td>S-IC.B.6</td><td>Evaluate reports based on data.</td><td>Evaluate reports based on data.</td><td>Inference from studies</td></tr>
+    <tr><td>S-CP.A.1</td><td>Describe events as subsets of a sample space using unions, intersections, and complements.</td><td>Describe events as subsets of a sample space (the set of outcomes) using characteristics (or categories) of the outcomes, or as unions, intersections, or complements of other events ("or," "and," "not").</td><td>Independence and conditional probability</td></tr>
+    <tr><td>S-CP.A.2</td><td>Two events are independent if the probability of their intersection equals the product of their probabilities.</td><td>Understand that two events A and B are independent if the probability of A and B occurring together is the product of their probabilities, and use this characterization to determine if they are independent.</td><td>Independence and conditional probability</td></tr>
+    <tr><td>S-CP.A.3</td><td>Conditional probability of A given B is P(A and B)/P(B). Two events are independent if and only if P(A|B) = P(A).</td><td>Understand the conditional probability of A given B as P(A and B)/P(B), and interpret independence of A and B as saying that the conditional probability of A given B is the same as the probability of A, and the conditional probability of B given A is the same as the probability of B.</td><td>Independence and conditional probability</td></tr>
+    <tr><td>S-CP.A.4</td><td>Construct and interpret two-way frequency tables to find conditional probabilities and judge independence.</td><td>Construct and interpret two-way frequency tables of data when two categories are associated with each object being classified. Use the two-way table as a sample space to decide if events are independent and to approximate conditional probabilities.</td><td>Independence and conditional probability</td></tr>
+    <tr><td>S-CP.A.5</td><td>Recognize and explain the concepts of conditional probability and independence in everyday situations.</td><td>Recognize and explain the concepts of conditional probability and independence in everyday language and everyday situations. For example, compare the chance of having lung cancer if you are a smoker with the chance of being a smoker if you have lung cancer.</td><td>Independence and conditional probability</td></tr>
+    <tr><td>S-CP.B.6</td><td>Find the conditional probability of A given B as the fraction of B's outcomes that also belong to A.</td><td>Find the conditional probability of A given B as the fraction of B's outcomes that also belong to A, and interpret the answer in terms of the model.</td><td>Rules of probability</td></tr>
+    <tr><td>S-CP.B.7</td><td>Apply the Addition Rule: P(A or B) = P(A) + P(B) - P(A and B).</td><td>Apply the Addition Rule, P(A or B) = P(A) + P(B) - P(A and B), and interpret the answer in terms of the model.</td><td>Rules of probability</td></tr>
+    <tr><td>S-CP.B.8 (+)</td><td>Apply the general Multiplication Rule: P(A and B) = P(A) P(B|A) = P(B) P(A|B).</td><td>(+) Apply the general Multiplication Rule in a uniform probability model, P(A and B) = P(A) P(B|A) = P(B) P(A|B), and interpret the answer in terms of the model.</td><td>Rules of probability</td></tr>
+    <tr><td>S-CP.B.9 (+)</td><td>Use permutations and combinations to compute probabilities.</td><td>(+) Use permutations and combinations to compute probabilities of compound events and solve problems.</td><td>Rules of probability</td></tr>
+    <tr><td>S-MD.A.1 (+)</td><td>Define a random variable for a sample space. Describe its probability distribution.</td><td>(+) Define a random variable for a quantity of interest by assigning a numerical value to each event in a sample space; graph the corresponding probability distribution using the same graphical displays as for data distributions.</td><td>Expected value</td></tr>
+    <tr><td>S-MD.A.2 (+)</td><td>Calculate the expected value of a random variable.</td><td>(+) Calculate the expected value of a random variable; interpret it as the mean of the probability distribution.</td><td>Expected value</td></tr>
+    <tr><td>S-MD.A.3 (+)</td><td>Use a theoretical probability distribution to find expected value and solve problems.</td><td>(+) Develop a probability distribution for a random variable defined for a sample space in which theoretical probabilities can be calculated; find the expected value.</td><td>Expected value</td></tr>
+    <tr><td>S-MD.A.4 (+)</td><td>Develop a probability distribution from empirical data. Find the expected value.</td><td>(+) Develop a probability distribution for a random variable defined for a sample space in which probabilities are assigned empirically; find the expected value.</td><td>Expected value</td></tr>
+    <tr><td>S-MD.B.5 (+)</td><td>Use expected value to evaluate strategies in games and other situations.</td><td>(+) Weigh the possible outcomes of a decision by assigning probabilities to payoff values and finding expected values.</td><td>Decisions from probability</td></tr>
+    <tr><td>S-MD.B.6 (+)</td><td>Use probabilities to make fair decisions.</td><td>(+) Use probabilities to make fair decisions (e.g., drawing by lots, using a random number generator).</td><td>Decisions from probability</td></tr>
+    <tr><td>S-MD.B.7 (+)</td><td>Analyze decisions and strategies using probability concepts.</td><td>(+) Analyze decisions and strategies using probability concepts (e.g., product testing, medical testing, pulling a hockey goalie at the end of a game).</td><td>Decisions from probability</td></tr>
+  </tbody>
+</table>
+
+<AccordionGroup>
+  <Accordion title="S-ID.B.6 sub-points">
+    `S-ID.B.6.a` Fit a function to the data; use functions fitted to data to solve problems in the context of the data. Use given functions or choose a function suggested by the context. Emphasize linear, quadratic, and exponential models.
+
+    `S-ID.B.6.b` Informally assess the fit of a function by plotting and analyzing residuals.
+
+    `S-ID.B.6.c` Fit a linear function for a scatter plot that suggests a linear association.
+  </Accordion>
+  <Accordion title="S-MD.B.5 sub-points">
+    `S-MD.B.5.a` Find the expected payoff for a game of chance. For example, find the expected winnings from a state lottery ticket or a game at a fast-food restaurant.
+
+    `S-MD.B.5.b` Evaluate and compare strategies on the basis of expected values. For example, compare a high-deductible versus a low-deductible automobile insurance policy using various, but reasonable, chances of having a minor or a major accident.
+  </Accordion>
+</AccordionGroup>
+
+## Classroom application
+
+`S-ID.A` continues work from middle school on summarizing one-variable data. The new content at high school is the normal distribution (`S-ID.A.4`). Students compute mean and standard deviation, fit a normal model where appropriate, and use the empirical rule (about 68 percent of data within one standard deviation, 95 percent within two, 99.7 percent within three). The standard is explicit that not all data are normal; recognizing skew, multimodality, or heavy tails matters.
+
+`S-ID.B.5` extends two-way categorical work from grade 8 (`8.SP.A.4`). Joint, marginal, and conditional relative frequencies all live in a two-way table. A useful classroom routine is a two-way table of grade level by extracurricular participation. Joint relative frequency is "the fraction of all students who are both ninth-graders and athletes." Marginal is "the fraction of all students who are ninth-graders." Conditional is "the fraction of ninth-graders who are athletes."
+
+`S-ID.B.6` brings function-fitting to data. Students fit linear, quadratic, or exponential models depending on the context, then assess fit by plotting residuals (observed minus predicted). A residual plot that looks like random scatter around zero indicates a good fit. A residual plot with a curved pattern indicates a wrong model family.
+
+`S-ID.C.9` is one of the most important standards in the entire category: correlation is not causation. Two variables that move together may share a cause, may share a confounding variable, or may simply happen to align in this data. Establishing causation requires a randomized experiment, not observation. The standard's classroom payoff is helping students read media reports critically.
+
+`S-IC.A.1` is the conceptual frame for the whole inference cluster. Statistics is described as a process: a sample is taken from a population, a parameter is estimated, and inference is made back to the population. The key insight is that random sampling supports inference, while convenience samples do not.
+
+`S-IC.A.2` introduces simulation as the workhorse for inference at this level. A claim that a coin is fair can be tested by simulating many fair-coin sequences and asking how often a result as extreme as the observed one would occur by chance. This is the conceptual heart of significance testing without the formal-test machinery.
+
+`S-IC.B.3` distinguishes three study designs: sample survey (estimating a parameter), experiment (comparing treatments under random assignment), and observational study (looking at associations without intervention). Only experiments support causal inference; surveys and observational studies support association only. This connects directly back to `S-ID.C.9`.
+
+`S-CP.A.2` and `S-CP.A.3` introduce the formal definitions of independence and conditional probability. Two events are independent if and only if P(A and B) = P(A)P(B). Conditional probability P(A given B) = P(A and B)/P(B). The classroom routine is a two-way table where students compute joint, marginal, and conditional probabilities and check whether independence holds.
+
+`S-CP.A.5` is the cluster's most accessible standard: explain conditional probability in everyday language. The standard's example contrasts P(cancer given smoker) with P(smoker given cancer). These are different quantities. Reasoning about which one is relevant to a medical decision is the kind of work the standard targets.
+
+`S-MD` is mostly plus-standards on random variables, expected value, and probability-based decisions. The decision-theoretic framing (`S-MD.B.5`) is unique to this cluster: a game with high variance but a positive expected value is favorable in the long run, but might be too risky for a single play. Comparing strategies by expected value is the central move.
+
+## Common teacher questions
+
+<AccordionGroup>
+  <Accordion title="Which standards are required for every student?">
+    All non-plus standards in `S-ID`, `S-IC`, and `S-CP.A` and `S-CP.B.6`, `S-CP.B.7` are required. Plus-standards are `S-CP.B.8`, `S-CP.B.9`, and all of `S-MD`.
+  </Accordion>
+  <Accordion title="Where do these standards live in a typical sequence?">
+    `S-ID` typically appears in Algebra 1 (one-variable data, two-way tables, scatter plots). `S-IC` and `S-CP` typically appear in Algebra 2. Plus-standards on expected value and probability-based decisions appear in pre-calculus, statistics electives, or AP Statistics.
+  </Accordion>
+  <Accordion title="Do students need to do formal hypothesis testing?">
+    The standards do not require formal-test machinery (z-tests, t-tests, p-values). They require informal inference using simulation (`S-IC.A.2`, `S-IC.B.4`, `S-IC.B.5`). Formal hypothesis testing belongs to AP Statistics or college courses.
+  </Accordion>
+  <Accordion title="How does this relate to MP4 and Modeling?">
+    Many `S-ID`, `S-IC`, and `S-MD` standards are star-marked, meaning they are modeling standards. The work of fitting a model to data, interpreting residuals, and using expected value to evaluate decisions is modeling under the high-school category framing. MP4 (model with mathematics) is the underlying practice.
+  </Accordion>
+</AccordionGroup>
 
 ## Related pages
 
@@ -91,8 +163,9 @@ TODO: 50–80 word simple summary covering the high school Statistics & Probabil
 - [High school Modeling](/standards/common-core/math/high-school/modeling)
 - [High school Geometry](/standards/common-core/math/high-school/geometry)
 - [High school overview](/standards/common-core/math/high-school)
+- [Grade 8 Statistics & Probability](/standards/common-core/math/grade-8/statistics-probability)
 - [Math hub](/standards/common-core/math)
 
 <div class="canonical-summary">
-TODO: 60–100 word extractable summary of high school Statistics & Probability.
+  The Common Core high school Statistics and Probability conceptual category covers four domains. In Interpreting Categorical and Quantitative Data (`S-ID`), students summarize one- and two-variable data, fit functions to scatter plots, interpret linear models, and distinguish correlation from causation. In Making Inferences and Justifying Conclusions (`S-IC`), they describe statistics as a process for inferring population parameters from random samples, distinguish among sample surveys, experiments, and observational studies, use simulation for inference, and evaluate reports based on data. In Conditional Probability and the Rules of Probability (`S-CP`), they define independence and conditional probability, apply the Addition Rule, and (for advanced tracks) apply the Multiplication Rule and use permutations and combinations. In Using Probability to Make Decisions (`S-MD`), advanced students calculate expected values and use them to weigh decisions. Source: corestandards.org/Math/Content/HSS.
 </div>
