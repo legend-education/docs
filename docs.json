@@ -307,6 +307,10 @@
     {
       "source": "/",
       "destination": "/standards/k-12-learning-standards"
+    },
+    {
+      "source": "/standards",
+      "destination": "/standards/k-12-learning-standards"
     }
   ]
 }
