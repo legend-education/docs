@@ -23,7 +23,7 @@
     }
 
     var standardsLink = document.createElement("a");
-    standardsLink.href = "/standards/k-12-learning-standards";
+    standardsLink.href = "/standards/guides/k-12-learning-standards";
     standardsLink.className = STANDARDS_LINK_CLASS;
     standardsLink.textContent = "Standards";
     standardsLink.setAttribute("aria-label", "Standards home");

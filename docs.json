@@ -51,7 +51,7 @@
       {
         "group": "Guides",
         "pages": [
-          "standards/k-12-learning-standards",
+          "standards/guides/k-12-learning-standards",
           "standards/guides/what-are-learning-standards",
           "standards/guides/standards-vs-curriculum-vs-rubrics",
           "standards/guides/why-were-building-this"
@@ -306,11 +306,15 @@
   "redirects": [
     {
       "source": "/",
-      "destination": "/standards/k-12-learning-standards"
+      "destination": "/standards/guides/k-12-learning-standards"
     },
     {
       "source": "/standards",
-      "destination": "/standards/k-12-learning-standards"
+      "destination": "/standards/guides/k-12-learning-standards"
+    },
+    {
+      "source": "/standards/k-12-learning-standards",
+      "destination": "/standards/guides/k-12-learning-standards"
     }
   ]
 }
