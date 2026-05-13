@@ -11,6 +11,3 @@ drafts/
 
 # Scaffolding generators (not user-facing docs)
 scripts/
-
-# Authoring reference snippets (leading underscore = internal only)
-snippets/_*.mdx
