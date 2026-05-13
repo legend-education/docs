@@ -49,6 +49,13 @@
   "navigation": {
     "groups": [
       {
+        "group": "Home",
+        "hidden": true,
+        "pages": [
+          "standards"
+        ]
+      },
+      {
         "group": "Guides",
         "pages": [
           "standards/guides/k-12-learning-standards",
