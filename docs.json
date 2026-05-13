@@ -309,10 +309,6 @@
       "destination": "/standards/guides/k-12-learning-standards"
     },
     {
-      "source": "/standards",
-      "destination": "/standards/guides/k-12-learning-standards"
-    },
-    {
       "source": "/standards/k-12-learning-standards",
       "destination": "/standards/guides/k-12-learning-standards"
     }
