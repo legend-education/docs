@@ -68,10 +68,18 @@
   // Build the interactive state map on the homepage. Source of truth is
   // the existing <table class="state-standards-table"> in index.mdx:
   // we scrape each row once into a name -> {ela, math, ..., rowId} map,
-  // then inject /images/us-states.svg, then delegate click + keyboard
-  // events at the map's root. Selecting a state highlights its path and
-  // renders the popover card; a "View in full table" pill scrolls the
-  // matching <tr> into view and briefly flashes its background.
+  // then inject the U.S. states SVG into #legend-state-map and delegate
+  // click + keyboard events at the map's root. Selecting a state
+  // highlights its path and renders the popover card; a "View in full
+  // table" pill scrolls the matching <tr> into view and briefly flashes
+  // its background.
+  //
+  // The SVG markup ships as a sibling customScript (state-map-svg.js)
+  // that registers `window.__LEGEND_STATE_MAP_SVG__`. Mintlify rewrites
+  // image URLs in MDX to signed mintcdn.com URLs at build time but does
+  // NOT rewrite string literals in customScripts, so fetching
+  // /images/us-states.svg directly 404s in production — hence the
+  // global-variable hand-off.
   //
   // Every step is idempotent so the MutationObserver below can fire it
   // freely as Mintlify mounts/unmounts the homepage on SPA navigation.
@@ -96,30 +104,52 @@
       indexRow(rows[i], stateDataMap);
     }
 
-    if (!mapEl.dataset.svgLoaded) {
-      mapEl.dataset.svgLoaded = "pending";
-      fetch("/images/us-states.svg")
-        .then(function (res) {
-          if (!res.ok) throw new Error("SVG fetch failed: " + res.status);
-          return res.text();
-        })
-        .then(function (markup) {
-          var doc = new DOMParser().parseFromString(markup, "image/svg+xml");
-          var svg = doc.querySelector("svg");
-          if (!svg) throw new Error("No <svg> in /images/us-states.svg");
-          mapEl.innerHTML = "";
-          mapEl.appendChild(svg);
-          mapEl.dataset.svgLoaded = "true";
-          bindMapHandlers(mapEl, cardEl, stateDataMap);
-        })
-        .catch(function (err) {
-          mapEl.dataset.svgLoaded = "error";
-          // Surface in the console; the table below the (empty) map
-          // remains fully functional, so failure mode is graceful.
-          console.error("[legend] state map:", err);
-        });
-    } else if (mapEl.dataset.svgLoaded === "true") {
+    if (mapEl.dataset.svgLoaded === "true") {
       bindMapHandlers(mapEl, cardEl, stateDataMap);
+      return;
+    }
+    if (mapEl.dataset.svgLoaded === "pending") return;
+
+    var inlineMarkup = window.__LEGEND_STATE_MAP_SVG__;
+    if (typeof inlineMarkup === "string" && inlineMarkup.length > 0) {
+      mountStateMapSvg(mapEl, cardEl, stateDataMap, inlineMarkup);
+      return;
+    }
+
+    // Fallback for environments where state-map-svg.js hasn't loaded
+    // yet (e.g. an older docs.json without the customScript entry, or
+    // a `mint dev` server where /images/us-states.svg is still served
+    // directly). The fallback is intentionally last-resort because it
+    // 404s on Mintlify's hosted origin.
+    mapEl.dataset.svgLoaded = "pending";
+    fetch("/images/us-states.svg")
+      .then(function (res) {
+        if (!res.ok) throw new Error("SVG fetch failed: " + res.status);
+        return res.text();
+      })
+      .then(function (markup) {
+        mountStateMapSvg(mapEl, cardEl, stateDataMap, markup);
+      })
+      .catch(function (err) {
+        mapEl.dataset.svgLoaded = "error";
+        // Surface in the console; the table below the (empty) map
+        // remains fully functional, so failure mode is graceful.
+        console.error("[legend] state map:", err);
+      });
+  }
+
+  function mountStateMapSvg(mapEl, cardEl, stateDataMap, markup) {
+    try {
+      var doc = new DOMParser().parseFromString(markup, "image/svg+xml");
+      var svg = doc.querySelector("svg");
+      if (!svg) throw new Error("No <svg> in state map markup");
+      mapEl.innerHTML = "";
+      mapEl.appendChild(svg);
+      mapEl.dataset.svgLoaded = "true";
+      bindMapHandlers(mapEl, cardEl, stateDataMap);
+    } catch (err) {
+      mapEl.dataset.svgLoaded = "error";
+      console.error("[legend] state map:", err);
     }
   }
 

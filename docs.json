@@ -308,7 +308,7 @@
     "href": "https://legend.org"
   },
   "settings": {
-    "customScripts": ["/scripts.js"]
+    "customScripts": ["/state-map-svg.js", "/scripts.js"]
   },
   "redirects": [
     {
